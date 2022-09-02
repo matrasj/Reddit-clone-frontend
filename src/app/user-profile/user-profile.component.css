@@ -1,0 +1,90 @@
+.user-main-info, .user-posts {
+  background-color: #fff;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  width: min-content;
+}
+
+.user-posts {
+  width: 100%;
+}
+
+.username {
+  text-align: center;
+  margin-top: 1.4rem;
+  font-size: 2rem;
+  color: #0079d3;
+  font-weight: bold;
+}
+
+.user-posts {
+  padding: 3.2rem 2.8rem;
+}
+
+.user-posts h1 {
+  color: #333;
+  font-size: 2.8rem;
+}
+
+
+.data-con {
+  padding: 2rem;
+}
+
+.flex {
+  display: flex;
+  gap: 1.4rem;
+  align-items: flex-start;
+}
+
+.data {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #0079d3;
+}
+
+p {
+  font-size: 1.4rem;
+  color: #333;
+}
+
+ngb-pagination ::ng-deep a{
+  font-size: 1.6rem;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-bottom: 1.8rem;
+}
+
+.avatar-img {
+  width: 25rem;
+}
+
+.title {
+  color: #333;
+  font-weight: bold;
+  font-size: 1.6rem;
+}
+
+.social-media-name {
+  color: #0079d3;
+  font-weight: bold;
+  font-size: 1.6rem;
+  text-decoration: none;
+  transition: all 0.2s linear;
+}
+
+.social-media-name:hover {
+  transform: translateY(-10%);
+  transition: all 0.2s linear;
+  color: #0661a4;
+}
+
+.social-media-link-con {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.2rem;
+}

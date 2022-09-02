@@ -1,0 +1,16 @@
+<div class="settings-con">
+  <div>
+    <div class="change-image">
+      <div>
+        <h1>Profile image</h1>
+        <form (submit)="onImageUploading($event)">
+          <div>
+            <input type="file"  name="selectedProfileImage" class="form-control"
+            (change)="onFileSelected($event)"/>
+          </div>
+          <button class="main-btn" type="submit">Upload</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

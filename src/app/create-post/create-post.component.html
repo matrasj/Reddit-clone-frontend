@@ -1,0 +1,66 @@
+<div class="flex container" style="margin: 2rem auto">
+  <div class="form-con">
+    <form [formGroup]="postFormGroup" (ngSubmit)="onPostCreating()">
+      <div formGroupName="post">
+        <h1>Create Post</h1>
+        <hr/>
+
+        <div class="form-row">
+          <div>
+            <label for="title">Title</label>
+            <input type="text" class="form-control"  id="title"
+                   formControlName="title"
+                   [ngClass]="title.errors && (title.touched || title.dirty) ? 'is-invalid' : ''"
+                   placeholder="Enter post's title" required>
+            <div class="invalid-feedback">
+              Title must be valid.
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div>
+            <label for="subreddit">Subreddit</label>
+            <select class="form-control subreddit" id="subreddit"
+                    formControlName="subreddit"
+                    [ngClass]="subreddit.errors && (subreddit.touched || subreddit.dirty) ? 'is-invalid' : ''" >
+              <option *ngFor="let subreddit of subreddits">{{ subreddit.title }}</option>
+            </select>
+
+          </div>
+        </div>
+
+        <div class="form-row">
+
+          <label for="content">Content</label>
+
+
+        <editor formControlName="content"
+                [ngClass]="content.errors && (content.touched || content.dirty) ? 'is-invalid' : ''"
+                id="content"
+                [init]="{plugins : 'link'}"
+        >
+        </editor>
+
+          <div class="invalid-feedback">
+          Content must be valid.
+        </div>
+        </div>
+
+
+        <div class="form-row">
+          <div>
+            <label for="image">Upload image</label>
+            <input type="file" class="form-control"  id="image"
+                   (change)="onFileSelected($event)">
+          </div>
+        </div>
+
+        <div class="flex btns-con">
+          <button class="second-btn" type="button" routerLink="/">Discard</button>
+          <button class="main-btn" type="submit">Post</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

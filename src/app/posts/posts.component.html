@@ -1,0 +1,25 @@
+<div class="posts-con">
+  <!--P O S T-->
+  <app-post *ngFor="let post of posts"  [post]="post"></app-post>
+  <div *ngIf="posts.length === 0">
+    <div class="container">
+      <p class="alert alert-warning">No posts available :-(</p>
+    </div>
+  </div>
+
+  <div>
+    <ngb-pagination
+      *ngIf="totalElements > 0;"
+      [(page)]="pageNumber"
+      [pageSize]="pageSize"
+      [collectionSize]="totalElements"
+      (pageChange)="onPageChange()"
+      [boundaryLinks]="true"
+    >
+    </ngb-pagination>
+
+
+  </div>
+
+
+</div>

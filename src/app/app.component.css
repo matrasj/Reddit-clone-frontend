@@ -1,0 +1,10 @@
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  gap: 7rem;
+}
+
+.main-con {
+  min-height: 100vh;
+  background-color: #f3f3f3;
+}

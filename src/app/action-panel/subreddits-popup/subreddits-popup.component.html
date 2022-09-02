@@ -1,0 +1,46 @@
+<div class="modal-con" style="position: relative">
+  <svg (click)="closeModal()" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="close-icon">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+  </svg>
+
+  <div class="container">
+    <h1>Subreddits</h1>
+    <form class="search-form flex" (submit)="onSearchingForSubreddits($event)" >
+      <input placeholder="Search for subreddits" name="keyword" class="form-control" [(ngModel)]="keyword"/>
+      <button type="submit" class="btn btn-primary">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="search-icon">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+        </svg>
+      </button>
+    </form>
+
+    <table class="table">
+      <thead class="thead-blue">
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Description</th>
+        <th scope="col">Date created</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let subreddit of subreddits" class="data-row" (click)="onSubredditClicking(subreddit)">
+        <td>{{ subreddit.title }}</td>
+        <td>{{ subreddit.description.length > 25 ? subreddit.description.slice(0, 25).concat('...') : subreddit.description}}</td>
+        <td>{{ getFormattedDate(subreddit.createdAt)}} ago</td>
+      </tr>
+      </tbody>
+    </table>
+
+    <ngb-pagination
+      *ngIf="totalElements > 0"
+      [(page)]="pageNumber"
+      [pageSize]="pageSize"
+      [collectionSize]="totalElements"
+      (pageChange)="onPageChange()"
+      [boundaryLinks]="true"
+    >
+    </ngb-pagination>
+
+
+  </div>
+</div>

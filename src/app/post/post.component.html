@@ -1,0 +1,38 @@
+
+  <div class="post">
+    <!-- V O T I N G -->
+    <div class="voting-con flex-col">
+      <svg (click)="likePost(post)" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="vote-icon" [ngClass]="isPostLiked ? 'liked' : ''">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 6.75L12 3m0 0l3.75 3.75M12 3v18" />
+      </svg>
+      <p class="voting-num" [ngClass]="post?.voteCount < 0 ? 'negative' : 'positive'">{{ post?.voteCount ? post?.voteCount : 0}}</p>
+
+      <svg (click)="dislikePost(post)"  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="vote-icon" [ngClass]="isPostDisliked ? 'disliked' : ''">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25L12 21m0 0l-3.75-3.75M12 21V3" />
+      </svg>
+    </div>
+    <!-- M A I N  C O N T E N T -->
+    <div class="main-content">
+      <div class="post-header flex space-between">
+        <div class="flex">
+          <img class="user-image" [src]="post?.profileImagePath ? post?.profileImagePath : DEFAULT_IMAGE_PATH"/>
+          <p class="post-time-stamp">Posted by <span class="username">{{ post?.authorUsername }}</span>. {{ getFormattedDate(post?.createdAt) }} ago</p>
+        </div>
+        <p class="subreddit-name">{{ post?.subredditName }}</p>
+      </div>
+      <hr/>
+
+      <div class="post-data">
+        <h1 class="post-title">{{ post?.title }}</h1>
+        <p class="post-desc" [innerHTML]="post?.content"></p>
+        <img *ngIf="post?.postImagePath" [src]="post?.postImagePath" class="post-img"/>
+
+      </div>
+      <hr/>
+      <div class="action-con flex">
+        <p class="comments-info">Comments({{ post?.commentsNumber ? post?.commentsNumber : 0}})</p>
+        <button class="main-btn" [routerLink]="['/post-view', post?.id]">Read post</button>
+      </div>
+    </div>
+  </div>
+

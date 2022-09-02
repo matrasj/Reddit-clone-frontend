@@ -1,0 +1,40 @@
+<div class="container">
+
+  <svg xmlns="http://www.w3.org/2000/svg" (click)="closePopup()" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="close-icon">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+  </svg>
+
+  <h1>Create social media link</h1>
+  <div class="form-con">
+    <form [formGroup]="socialMediaLinkFormGroup" (ngSubmit)="onSocialMediaLinkCreating()">
+      <div class="con"formGroupName="socialMediaLink">
+        <div class="form-row">
+          <label for="social-media-name">Social media name</label>
+          <input id="social-media-name" class="social-media-name form-control"
+                 placeholder="Facebook, instagram..."
+                 formControlName="socialMediaName"
+                [ngClass]="socialMediaName.errors && (socialMediaName.touched || socialMediaName.dirty) ? 'is-invalid' : ''"
+          />
+          <div class="invalid-feedback"
+               *ngIf="socialMediaName.errors && (socialMediaName.touched || socialMediaName.dirty)">
+            Name must be valid
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label for="social-media-url">Url</label>
+          <input id="social-media-url" class="social-media-url form-control"
+                 placeholder="https://your_social_media_link.com"
+                  formControlName="url"
+                 [ngClass]="socialMediaUrl.errors && (socialMediaUrl.touched || socialMediaUrl.dirty) ? 'is-invalid' : ''"/>
+          <div class="invalid-feedback"
+               *ngIf="socialMediaUrl.errors && (socialMediaUrl.touched || socialMediaUrl.dirty)">
+            Url must be valid
+          </div>
+        </div>
+      </div>
+
+      <button type="submit" class="main-btn">Create link</button>
+    </form>
+  </div>
+</div>

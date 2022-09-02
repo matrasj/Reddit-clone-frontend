@@ -1,0 +1,15 @@
+.posts-con {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+ngb-pagination ::ng-deep a{
+  font-size: 1.6rem;
+}

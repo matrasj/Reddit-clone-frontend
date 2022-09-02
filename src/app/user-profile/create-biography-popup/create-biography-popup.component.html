@@ -1,0 +1,20 @@
+<div class="container">
+  <svg xmlns="http://www.w3.org/2000/svg" (click)="closePopup()" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="close-icon">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+  </svg>
+
+  <h1>Set biography</h1>
+  <form [formGroup]="biographyFormGroup" (ngSubmit)="onBiographySetting()">
+    <label>Write something about yourself</label>
+    <textarea class="form-control"
+              placeholder="Max characters number is 70"
+              formControlName="biography"
+              [ngClass]="biography.errors && (biography.touched || biography.dirty) ? 'is-invalid' : ''"
+    ></textarea>
+    <div class="invalid-feedback" *ngIf="biography.errors && (biography.touched || biography.dirty)">
+      Biography must be valid.
+    </div>
+
+    <button class="main-btn" style="width: 100%">Save changes</button>
+  </form>
+</div>

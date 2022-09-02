@@ -1,0 +1,30 @@
+<div class="action-panel-con">
+  <div class="action-section">
+    <img src="assets/images/image-main.png" class="main-img"/>
+    <div class="pad">
+      <p class="desc" style="text-align: center">
+        Welcome to Spring Boot & Angular home page. Feel free to create and comment posts. See you!
+      </p>
+
+      <div class="action-btn flex-col">
+        <button class="main-btn" routerLink="/create-post">Create post</button>
+        <button class="second-btn" routerLink="/create-subreddit">Create subreddit</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="subreddits-con">
+    <h2>Browse Subreddits</h2>
+    <div class="subreddits-list">
+      <div *ngFor="let subreddit of subreddits" (click)="onSubredditClicking(subreddit)">
+
+        <div class="subreddit">
+          <p class="subreddit-name">{{ subreddit.title }}</p>
+        </div>
+
+      </div>
+    </div>
+
+    <button class="main-btn view-btn" (click)="onViewAllClicking()">View all</button>
+  </div>
+</div>

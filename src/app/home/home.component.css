@@ -1,0 +1,21 @@
+.main-con {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  max-width: 120rem;
+  min-width: 20rem;
+  width: 100%;
+  padding: 1.2rem 3.4rem
+}
+
+.outlet-con {
+  width: 75%;
+}
+
+
+
+app-action-panel {
+  width: 25%;
+
+}

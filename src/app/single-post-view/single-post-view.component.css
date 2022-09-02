@@ -1,0 +1,157 @@
+
+
+.vote-icon {
+  width: 3rem;
+  stroke: #868e96;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+
+.vote-icon:hover {
+  transform: scale(1.2);
+  transition: all 0.2s linear;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+p {
+  margin: 0;
+  font-size: 1.4rem;
+  color: #868e96;
+}
+
+.posts-con {
+  width: 100%;
+}
+
+.post, .comments-con {
+  padding: 2.8rem 3.4rem;
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  gap: 2.4rem;
+  background-color: #fff;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+
+.comments-con {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border-top: solid 1px #868e96;
+}
+
+.comments-con h1 {
+  color: #333;
+  font-weight: bold;
+  font-size: 3.2rem;
+}
+
+.comment {
+  border-left: solid 1px #868e96;
+  padding: 0.2rem 1.8rem 0.6rem 1.8rem;
+  margin-bottom: 1.2rem;
+}
+
+.author {
+  font-size: 1.6rem;
+  color: #0079d3;
+  font-weight: bold;
+}
+
+.main-content {
+  width: 100%;
+}
+
+.subreddit-name {
+  font-weight: bold;
+  color: #222;
+  font-size: 1.6rem;
+}
+
+.post-time-stamp {
+  font-size: 1.2rem;
+}
+
+.post-data {
+  margin-top: 2.8rem;
+  margin-bottom: 2.8rem;
+}
+
+.post-title {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #333;
+}
+
+textarea {
+  font-size: 1.6rem;
+  max-height: 30rem;
+  min-height: 10rem;
+}
+
+button {
+  margin-top: 0.8rem;
+}
+
+ngb-pagination ::ng-deep a{
+  font-size: 1.6rem;
+}
+
+.post {
+  position: relative;
+}
+
+.back-btn {
+  position: absolute;
+  right: 2%;
+  top: 0;
+}
+
+.no-com {
+  width: 100%;
+}
+
+.voting-num {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.positive {
+  color: #12b886;
+}
+
+.negative {
+  color: #f03e3e;
+}
+
+.liked {
+  stroke: #12b886 !important;
+}
+
+.disliked {
+  stroke: #f03e3e !important;
+}
+
+.user-image {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+}
+
+.post-img {
+  width: 30rem;
+}

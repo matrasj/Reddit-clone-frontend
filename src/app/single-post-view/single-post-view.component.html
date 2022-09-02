@@ -1,0 +1,96 @@
+<div class="post-view-con">
+
+  <div>
+    <!-- V O T I N G -->
+    <div class="post">
+      <button class="second-btn back-btn" routerLink="/">Back</button>
+      <div class="voting-con flex-col">
+        <svg (click)="likePost(post)" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="vote-icon" [ngClass]="isPostLiked ? 'liked' : ''">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 6.75L12 3m0 0l3.75 3.75M12 3v18" />
+        </svg>
+        <p class="voting-num" [ngClass]="post?.voteCount < 0 ? 'negative' : 'positive'">{{ post?.voteCount ? post?.voteCount : 0}}</p>
+
+        <svg (click)="dislikePost(post)"  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="vote-icon" [ngClass]="isPostDisliked ? 'disliked' : ''">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25L12 21m0 0l-3.75-3.75M12 21V3" />
+        </svg>
+      </div>
+      <!-- M A I N  C O N T E N T -->
+      <div class="main-content">
+        <div class="post-header flex">
+          <img class="user-image" [src]="post?.profileImagePath ? post?.profileImagePath : DEFAULT_PROFILE_IMAGE"/>
+         <div>
+           <p class="subreddit-name">{{ post?.subredditName }}</p>
+           <p class="post-time-stamp">Posted by {{ post?.authorUsername }}. {{ getFormattedDate(post?.createdAt) }} ago</p>
+         </div>
+        </div>
+        <hr/>
+
+        <div class="post-data">
+          <h1 class="post-title">{{ post?.title }}</h1>
+          <p class="post-desc" [innerHTML]="post?.content"></p>
+        </div>
+        <img *ngIf="post?.postImagePath" [src]="post?.postImagePath" class="post-img"/>
+        <hr/>
+        <div *ngIf="isLogged else userNotAuthenticated">
+          <p>Comment as <span class="author">{{ username }}</span></p>
+          <hr/>
+          <form [formGroup]="postFormGroup" (ngSubmit)="onCommentCreating(post)">
+            <div class="form-row" formGroupName="post">
+            <textarea class="form-control"
+                      placeholder="Your Thoughts?"
+                      formControlName="content"
+                      [ngClass]="content.errors && (content.touched || content.dirty) ? 'is-invalid' : ''">
+          </textarea>
+              <div class="invalid-feedback" >
+                Comment can not be blank!
+              </div>
+              <button class="main-btn">Comment</button>
+            </div>
+          </form>
+        </div>
+
+        <ng-template #userNotAuthenticated>
+          <div class="alert alert-warning">
+            Only authenticated users can post comments.
+          </div>
+          <button routerLink="/login" class="second-btn">Login</button>
+        </ng-template>
+      </div>
+    </div>
+    <div class="comments-con">
+      <h1>Comments</h1>
+
+      <div *ngFor="let comment of comments" class="comment">
+        <p class="flex" style="margin-bottom: 1.2rem">
+          <span class="author">{{ comment.authorUsername }}</span>
+          <span class="date">{{ getFormattedDate(comment.createdAt)}} ago</span>
+        </p>
+
+        <p class="content" [innerHTML]="comment.content"></p>
+      </div>
+
+      <div>
+        <ngb-pagination
+          *ngIf="totalElements > 0; else noComments"
+          [(page)]="pageNumber"
+          [pageSize]="pageSize"
+          [collectionSize]="totalElements"
+          (pageChange)="onPageChange()"
+          [boundaryLinks]="true"
+        >
+        </ngb-pagination>
+      </div>
+
+
+        <div class="no-com">
+          <ng-template #noComments>
+            <p class="alert alert-warning">Post has no comments.</p>
+          </ng-template>
+        </div>
+
+
+    </div>
+  </div>
+
+
+</div>
