@@ -7,7 +7,7 @@
   <form [formGroup]="biographyFormGroup" (ngSubmit)="onBiographySetting()">
     <label>Write something about yourself</label>
     <textarea class="form-control"
-              placeholder="Max characters number is 70"
+              placeholder="Max characters number is 100"
               formControlName="biography"
               [ngClass]="biography.errors && (biography.touched || biography.dirty) ? 'is-invalid' : ''"
     ></textarea>

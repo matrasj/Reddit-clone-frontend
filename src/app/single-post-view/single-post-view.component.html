@@ -3,7 +3,7 @@
   <div>
     <!-- V O T I N G -->
     <div class="post">
-      <button class="second-btn back-btn" routerLink="/">Back</button>
+      
       <div class="voting-con flex-col">
         <svg (click)="likePost(post)" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="vote-icon" [ngClass]="isPostLiked ? 'liked' : ''">
           <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 6.75L12 3m0 0l3.75 3.75M12 3v18" />
@@ -16,7 +16,7 @@
       </div>
       <!-- M A I N  C O N T E N T -->
       <div class="main-content">
-        <div class="post-header flex">
+        <div class="post-header flex user-data" [routerLink]="['/profile/', post?.authorUsername]">
           <img class="user-image" [src]="post?.profileImagePath ? post?.profileImagePath : DEFAULT_PROFILE_IMAGE"/>
          <div>
            <p class="subreddit-name">{{ post?.subredditName }}</p>

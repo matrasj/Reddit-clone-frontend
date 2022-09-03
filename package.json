@@ -31,6 +31,8 @@
     "ngx-spinner": "^14.0.0",
     "ngx-toastr": "^12.0.1",
     "rxjs": "~7.5.0",
+    "sockjs-client": "^1.6.1",
+    "stompjs": "^2.3.3",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },

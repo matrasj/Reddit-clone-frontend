@@ -20,7 +20,7 @@ export class CreateBiographyPopupComponent implements OnInit {
 
   ngOnInit(): void {
     this.biographyFormGroup = this.formBuilder.group({
-      biography : new FormControl('', [Validators.maxLength(70), Validators.required])
+      biography : new FormControl('', [Validators.maxLength(100), Validators.required])
     })
   }
 

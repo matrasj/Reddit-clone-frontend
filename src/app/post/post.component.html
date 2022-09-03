@@ -13,7 +13,7 @@
     </div>
     <!-- M A I N  C O N T E N T -->
     <div class="main-content">
-      <div class="post-header flex space-between">
+      <div class="post-header flex space-between user-data" [routerLink]="['/profile/', post?.authorUsername]">
         <div class="flex">
           <img class="user-image" [src]="post?.profileImagePath ? post?.profileImagePath : DEFAULT_IMAGE_PATH"/>
           <p class="post-time-stamp">Posted by <span class="username">{{ post?.authorUsername }}</span>. {{ getFormattedDate(post?.createdAt) }} ago</p>

@@ -40,6 +40,8 @@ import { EditPostComponent } from './edit-post/edit-post.component';
 import { CreateSocialMediaLinkPopupComponent } from './user-profile/create-social-media-link-popup/create-social-media-link-popup.component';
 import { CreateBiographyPopupComponent } from './user-profile/create-biography-popup/create-biography-popup.component';
 import {SocialMediaLinkService} from "./service/social-media-link-service";
+import { ChatComponent } from './chat/chat.component';
+import {WebSocketService} from "./service/web-socket-service";
 
 
 const routes = [
@@ -58,7 +60,8 @@ const routes = [
   { path : 'profile/:username', component: UserProfileComponent, children: [
       { path : '', component: UserPostsComponent},
       { path : 'settings', component: UserSettingsComponent}
-    ], canActivate: [AuthGuard]},
+    ]},
+  { path : "chat/:username", component: ChatComponent}
 
 
 
@@ -85,6 +88,7 @@ const routes = [
     EditPostComponent,
     CreateSocialMediaLinkPopupComponent,
     CreateBiographyPopupComponent,
+    ChatComponent,
 
   ],
   imports: [
@@ -116,7 +120,8 @@ const routes = [
     CommentService,
     UserService,
     VotingService,
-    SocialMediaLinkService],
+    SocialMediaLinkService,
+    WebSocketService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

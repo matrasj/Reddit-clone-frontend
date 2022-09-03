@@ -8,6 +8,16 @@
   width: 100%;
 }
 
+.biography {
+  color: #333;
+  text-align: left;
+  font-size: 1.6rem;
+}
+.margin-con {
+  margin-top: 2.8rem !important;
+  margin-bottom: 2.4rem !important;
+}
+
 .username {
   text-align: center;
   margin-top: 1.4rem;
@@ -65,6 +75,7 @@ ngb-pagination ::ng-deep a{
 .title {
   color: #333;
   font-weight: bold;
+  text-align: left;
   font-size: 1.6rem;
 }
 

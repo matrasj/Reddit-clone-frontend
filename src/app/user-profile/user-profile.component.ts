@@ -43,7 +43,6 @@ export class UserProfileComponent implements OnInit {
           this.userService.getUserData(this.username)
             .subscribe((user) => {
               this.user = user;
-              console.log(this.user)
               this.fetchUserPosts(this.username);
             });
         });

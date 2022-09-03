@@ -3,11 +3,13 @@
     <img [src]="user?.profileImagePath ? user?.profileImagePath : DEFAULT_PROFILE_IMAGE" class="avatar-img"/>
     <div class="data-con">
       <p class="username" >{{ username }}</p>
-      <p class="title">Biography</p>
-      <p class="biography" *ngIf="user?.biography else noBiography">{{ user?.biography }}</p>
-      <ng-template #noBiography>
-        <p class="alert alert-warning">No biography.</p>
-      </ng-template>
+      <div class="margin-con">
+        <p class="title">Biography</p>
+        <p class="biography" *ngIf="user?.biography else noBiography">{{ user?.biography }}</p>
+        <ng-template #noBiography>
+          <p class="alert alert-warning">No biography.</p>
+        </ng-template>
+      </div>
       <div class="social-links-con" style="margin-bottom: 2.4rem">
         <!--N E W  FUNCIONALITY -->
         <p class="title">Social media links</p>
@@ -21,7 +23,6 @@
           <p class="alert alert-warning">No social media links.</p>
         </ng-template>
       </div>
-
 
       <div class="flex-column" *ngIf="ownerAccount">
         <button class="second-btn" style="border-radius: 2rem" (click)="onBiographyCreating()">Set biography</button>
@@ -38,14 +39,10 @@
         </p>
       </div>
 
-
+      <button class="main-btn" style="width: 100%" [routerLink]="['/chat/', username]">Send message</button>
     </div>
   </div>
-
   <div style="width: 100%">
     <router-outlet></router-outlet>
   </div>
-
-
-
 </div>

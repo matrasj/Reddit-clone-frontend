@@ -115,11 +115,6 @@ ngb-pagination ::ng-deep a{
   position: relative;
 }
 
-.back-btn {
-  position: absolute;
-  right: 2%;
-  top: 0;
-}
 
 .no-com {
   width: 100%;
