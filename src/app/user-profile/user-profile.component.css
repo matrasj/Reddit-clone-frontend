@@ -43,7 +43,7 @@
 .flex {
   display: flex;
   gap: 1.4rem;
-  align-items: flex-start;
+  justify-content: flex-start !important;
 }
 
 .data {
@@ -96,6 +96,35 @@ ngb-pagination ::ng-deep a{
 .social-media-link-con {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 0.4rem;
   margin-bottom: 1.2rem;
+}
+
+button {
+  font-size: 1.4rem;
+}
+
+@media only screen and (max-width: 1000px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100% !important;
+  }
+
+  .user-main-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .avatar-img {
+    align-self: center;
+  }
+}
+
+.outlet-con {
+  width: 100%;
 }

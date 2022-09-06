@@ -29,11 +29,16 @@
 p {
   margin: 0;
   font-size: 1.4rem;
-  color: #868e96;
+  color: #333;
+  width: max-content;
 }
 
 .posts-con {
   width: 100%;
+}
+
+.date {
+  color: #868e96;
 }
 
 .post, .comments-con {
@@ -125,6 +130,39 @@ ngb-pagination ::ng-deep a{
   font-weight: bold;
 }
 
+.back-icon-con {
+  position: absolute;
+  width: 6rem;
+  height: 6rem;
+  right: 0;
+  top: -4%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #0079d3;
+  padding: 0.6rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+
+.profile-comment-img {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+.back-icon-con svg {
+  stroke: #fff;
+}
+
+.back-icon-con p {
+  color: #fff;
+}
+
+.back-icon-con:hover {
+  transform: translateY(-5%);
+  transition: all 0.2s linear;
+}
 .positive {
   color: #12b886;
 }
@@ -148,5 +186,81 @@ ngb-pagination ::ng-deep a{
 }
 
 .post-img {
-  width: 30rem;
+  width: 100%;
+}
+
+.form-row {
+  margin-bottom: 2.4rem;
+  display: block;
+  width: 100%;
+}
+
+input, editor {
+  font-size: 1.4rem;
+  width: 100%;
+}
+
+editor {
+  max-height: 40rem;
+}
+
+
+
+.comment-image {
+  width: 20rem;
+}
+
+.content {
+  width: 100%;
+  word-wrap: break-word;
+}
+
+.comment {
+  width: 100%;
+}
+
+.post-desc {
+  word-wrap: break-word;
+  width: 100%;
+}
+
+.comments-con {
+  width: 100%;
+}
+
+.comment-image {
+  width: 100%;
+}
+
+@media only screen and (max-width: 1000px) {
+  .post {
+    flex-direction: column-reverse;
+  }
+
+  .voting-con {
+    flex-direction: row;
+  }
+
+  .main-btn {
+    width: 100%;
+  }
+
+  .comments-con {
+    padding: 1.2rem;
+  }
+
+  .main-content hr {
+    display: none;
+  }
+
+  .post-header {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
+  #comment-author {
+    margin: 2.4rem 0 1.2rem 0;
+  }
+
 }

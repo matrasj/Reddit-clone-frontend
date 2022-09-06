@@ -12,7 +12,7 @@ export class PostsComponent implements OnInit {
   posts : PostModel[] = [];
   totalElements : number = 0;
   totalPages : number = 0;
-  pageSize : number = 4;
+  pageSize : number = 5;
   pageNumber : number = 1;
   constructor(private postService : PostService,
               private activatedRoute : ActivatedRoute) { }
@@ -22,7 +22,12 @@ export class PostsComponent implements OnInit {
   }
 
   onPageChange() {
-      this.initData();
+    this.initData();
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
   }
 
   private handleResponse(data : any) {

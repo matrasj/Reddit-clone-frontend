@@ -12,7 +12,6 @@
 }
 
 .modal-con {
-  width: 80rem;
   min-height: 25rem;
 }
 
@@ -59,7 +58,19 @@ input {
 
 .search-form {
   margin-bottom: 2.8rem;
+  width: 100%;
 }
+
+
+@media only screen and (max-width: 1000px) {
+  .subreddit-date, .subreddit-desc, .desc-header, .date-header {
+    display: none;
+  }
+
+
+
+}
+
 
 
 

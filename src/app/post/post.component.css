@@ -29,7 +29,7 @@
 p {
   margin: 0;
   font-size: 1.4rem;
-  color: #868e96;
+  color: #333;
 }
 
 .posts-con {
@@ -44,6 +44,7 @@ p {
   gap: 2.4rem;
   background-color: #fff;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  position: relative;
 }
 
 .main-content {
@@ -102,13 +103,64 @@ p {
   justify-content: space-between;
 }
 
-.username {
-  font-weight: bold;
-  color: #0079d3;
-  font-size: 1.4rem;
-}
+
 
 .post-img {
-  width: 30rem;
+  width: 100%;
 }
 
+.edit-icon {
+  width: 5rem;
+  stroke: #0079d3;
+  position: absolute;
+  right: 1%;
+  bottom: 1%;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+
+.edit-icon:hover {
+  transform: scale(1.1);
+  transition: all 0.2s linear;
+}
+
+button {
+  font-size: 1.6rem;
+}
+/* DROP DOWN*/
+.options-icon {
+  width: 3.5rem;
+  color: #868e96;
+}
+
+.menu {
+  position: absolute;
+  right: -1%;
+  top: -1%;
+}
+
+.options-btn {
+  background: none;
+  border: none;
+}
+
+.dropdown-toggle::after {
+  display:none;
+}
+
+@media only screen and (max-width: 1000px) {
+  .post {
+    flex-direction: column-reverse;
+    padding: 0.8rem 1.2rem;
+  }
+
+  .voting-con {
+    flex-direction: row;
+  }
+
+  .post-header {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+}

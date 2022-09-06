@@ -1,5 +1,7 @@
 export class SocialMediaLinkModel {
-  constructor(public url : string,
+  constructor(
+              public id : number | any,
+              public url : string,
               public socialMediaName : string) {
   }
 }

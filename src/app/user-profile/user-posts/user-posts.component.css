@@ -1,7 +1,6 @@
 .user-main-info, .user-posts {
   background-color: #fff;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  width: min-content;
 }
 
 .user-posts {
@@ -13,11 +12,10 @@ h1 {
 }
 
 .username {
-  text-align: center;
-  margin-top: 1.4rem;
   font-size: 2rem;
-  color: #0079d3;
+  width: max-content !important;
   font-weight: bold;
+  display: inline-block !important;
 }
 
 .user-posts {
@@ -26,7 +24,8 @@ h1 {
 
 .user-posts h1 {
   color: #333;
-  font-size: 2.8rem;
+  font-size: 2rem;
+  font-weight: bold;
 }
 
 .posts-list-con {
@@ -49,8 +48,6 @@ h1 {
 
 .flex {
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;;
 }
 
 .data {
@@ -101,6 +98,12 @@ ngb-pagination ::ng-deep a{
 .flex {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+}
+
+
+form {
+  width: 60%;
 }
 
 input {
@@ -111,4 +114,12 @@ input {
 
 .search-form {
   margin-bottom: 2.8rem;
+}
+
+
+@media only screen and (max-width: 1000px) {
+  .user-posts {
+    padding: 1.2rem;
+  }
+
 }

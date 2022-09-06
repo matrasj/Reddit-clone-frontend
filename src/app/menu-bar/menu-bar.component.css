@@ -1,5 +1,6 @@
 .logo-img {
   width: 5rem;
+
   cursor: pointer;
 }
 
@@ -12,7 +13,6 @@ h1 {
   gap: 1rem;
   align-items: center;
   justify-content: space-between;
-
 }
 
 h1 {
@@ -179,7 +179,8 @@ input {
 }
 
 .search-bar {
-  margin-left: 10rem;
+  width: 100%;
+  max-width: 40rem;
   position: relative !important;
 }
 
@@ -189,7 +190,7 @@ input {
   z-index: 2;
   transform: translateY(100%);
   background-color: #ffffff;
-  width: 100%;
+  width: max-content;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
@@ -232,5 +233,31 @@ input {
   transition: all 0.2s linear;
 }
 
+.logo-con {
+  margin-right: 5rem;
+}
 
+@media only screen and (max-width: 1000px) {
+  .post {
+    flex-direction: column-reverse;
+  }
+
+  .voting-con {
+    flex-direction: row;
+  }
+
+  .logo-con h1{
+    display: none;
+  }
+
+  .con {
+    padding: 0.8rem 2.4rem;
+  }
+
+  .logo-con {
+    margin-right: 0.8rem;
+  }
+
+
+}
 

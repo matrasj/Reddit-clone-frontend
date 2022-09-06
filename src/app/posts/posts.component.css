@@ -13,3 +13,7 @@
 ngb-pagination ::ng-deep a{
   font-size: 1.6rem;
 }
+
+.posts-con {
+  width: 100%;
+}

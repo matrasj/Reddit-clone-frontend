@@ -6,6 +6,9 @@ import {AuthService} from "../service/auth-service";
 import {ToastrService} from "ngx-toastr";
 import {Router} from "@angular/router";
 import {PostService} from "../service/post-service";
+import {MatDialog} from "@angular/material/dialog";
+import {EditPostComponent} from "../edit-post/edit-post.component";
+import {ConfirmPostDeletionComponent} from "../confirm-post-deletion/confirm-post-deletion.component";
 
 @Component({
   selector: 'app-post',
@@ -16,6 +19,7 @@ export class PostComponent implements OnInit {
   isPostLiked : boolean = false;
   isPostDisliked : boolean = false;
   isLogged : boolean = false;
+  currentUsername : string | any = "";
   @Input() post : PostModel | any;
 
   public DEFAULT_IMAGE_PATH : string = "assets/images/profile-images/default-image.png";
@@ -24,7 +28,8 @@ export class PostComponent implements OnInit {
               private authService : AuthService,
               private toast : ToastrService,
               private router : Router,
-              private postService : PostService) { }
+              private postService : PostService,
+              private dialogRef : MatDialog) { }
 
   ngOnInit(): void {
     this.authService.isAuthenticated
@@ -34,6 +39,18 @@ export class PostComponent implements OnInit {
           [this.isPostLiked, this.isPostDisliked] = this.postService.getAttributesAfterLoading(this.isPostLiked, this.isPostDisliked, this.post);
         }
       });
+
+    this.currentUsername = this.authService.getUsername();
+  }
+
+  openConfirmDeletion() {
+    this.dialogRef.open(ConfirmPostDeletionComponent, {
+      width: "40rem",
+      disableClose : true,
+      data : {
+        id : this.post.id
+      }
+    });
   }
 
   likePost(post : PostModel) {
@@ -46,6 +63,14 @@ export class PostComponent implements OnInit {
       this.router.navigate(["/login"]);
       this.toast.info("Only logged users can do this");
     }
+  }
+
+  openPopupEditor() {
+    this.dialogRef.open(EditPostComponent, {
+      data : {
+        id : this.post.id
+      }
+    });
   }
 
   dislikePost(post : PostModel) {

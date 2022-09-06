@@ -18,6 +18,7 @@ import {VotingService} from "../service/voting-service";
   styleUrls: ['./single-post-view.component.css']
 })
 export class SinglePostViewComponent implements OnInit {
+  selectedCommentImage : File | any;
   post : PostModel | any;
   username : any = '';
   postFormGroup : FormGroup | any;
@@ -48,9 +49,13 @@ export class SinglePostViewComponent implements OnInit {
 
     this.postFormGroup = this.formBuilder.group({
       post : this.formBuilder.group({
-          content : new FormControl('', [Validators.required])
+          content : new FormControl('', [Validators.required, Validators.maxLength(250)])
       })
     })
+  }
+
+  onFileSelected(event : Event | any) {
+    this.selectedCommentImage = event.target.files[0];
   }
 
   getFormattedDate(date : string) {
@@ -73,12 +78,16 @@ export class SinglePostViewComponent implements OnInit {
       this.commentService.addCommentToPost(new CommentRequestModel(
         this.content.value,
         this.username
-      ), post.id)
+      ),
+        this.selectedCommentImage,
+        post.id)
         .subscribe((res) => {
           if (res) {
+            this.selectedCommentImage = null;
             this.postFormGroup.reset();
             this.toastService.success("Successfully created comment", "Success!");
             this.fetchComments(post.id);
+            window.location.reload();
           } else {
             this.toastService.error("Something gone wrong", "Error");
           }
@@ -143,6 +152,8 @@ export class SinglePostViewComponent implements OnInit {
           });
       });
   }
+
+
 }
 
 enum VoteType {

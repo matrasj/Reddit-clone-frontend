@@ -16,8 +16,15 @@ export class CommentService {
     return this.httpClient.get<GetResponse>(`${this.API_COMMENT_URL}${postId}?pageSize=${pageSize}&pageNumber=${pageNumber}`)
   }
 
-  public addCommentToPost(commentRequest : CommentRequestModel, postId : number) : Observable<string>{
-    return this.httpClient.post(`${this.API_CREATE_COMMENT_URL}${postId}`, commentRequest, {
+  public addCommentToPost(commentRequest : CommentRequestModel, commentImage : File, postId : number) : Observable<string>{
+    const data = new FormData();
+    data.append("authorUsername", commentRequest.authorUsername);
+    data.append("content", commentRequest.content);
+
+    if (commentImage) {
+      data.append("file", commentImage);
+    }
+    return this.httpClient.post(`${this.API_CREATE_COMMENT_URL}${postId}`, data, {
       responseType : 'text'
     });
   }

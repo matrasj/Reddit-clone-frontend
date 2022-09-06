@@ -1,7 +1,7 @@
 <div class="user-posts">
   <div class="flex">
-    <h1>{{ ownerAccount ? "Your" : username }} posts</h1>
-    <div>
+    <h1 class="username" style="width: max-content;">{{ ownerAccount ? "Your" : username }} posts</h1>
+
       <form class="search-form flex" (submit)="onPostsSearching($event)" >
         <input placeholder="Search for your posts" name="keyword" class="form-control" [(ngModel)]="keyword"/>
         <button type="submit" class="btn btn-primary">
@@ -10,7 +10,7 @@
           </svg>
         </button>
       </form>
-    </div>
+
   </div>
   <div class="posts-list-con" *ngIf="posts.length > 0; else noPosts">
     <app-post *ngFor="let post of posts" [post]="post"></app-post>

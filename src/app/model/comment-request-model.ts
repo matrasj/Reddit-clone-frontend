@@ -1,5 +1,5 @@
 export class CommentRequestModel {
   constructor(public content : string,
-  public authorUsername : string) {
+              public authorUsername : string) {
   }
 }

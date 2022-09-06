@@ -12,6 +12,10 @@ textarea {
   max-height: 25rem;
 }
 
+.editor {
+  max-height: 60rem;
+}
+
 .form-row {
   margin-bottom: 2.4rem;
   display: block;

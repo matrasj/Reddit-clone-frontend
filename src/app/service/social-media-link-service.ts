@@ -6,6 +6,7 @@ import {Observable} from "rxjs";
 @Injectable()
 export class SocialMediaLinkService {
   private API_SOCIAL_MEDIA_URL : string = "http://localhost:8081/api/v1/social-media-links";
+  private API_SOCIAL_MEDIA_DELETE_URL: string = "http://localhost:8081/api/v1/social-media-links/delete";
   constructor(private httpClient : HttpClient) {
   }
 
@@ -13,5 +14,11 @@ export class SocialMediaLinkService {
     return this.httpClient.post(`${this.API_SOCIAL_MEDIA_URL}`, socialMediaLink, {
       responseType : 'text'
     });
+  }
+
+  deleteSocialMediaLink(linkId : number) : Observable<string> {
+    return this.httpClient.get(`${this.API_SOCIAL_MEDIA_DELETE_URL}/${linkId}`, {
+      responseType : 'text'
+    })
   }
 }

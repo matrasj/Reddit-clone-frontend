@@ -54,7 +54,6 @@ export class UserPostsComponent implements OnInit {
 
   onPostsSearching(event : Event) {
     event.preventDefault();
-    console.log(this.keyword)
 
     this.postService.getPostsByUsernameAndKeyword(this.username, this.keyword, this.pageNumber - 1, this.pageSize)
       .subscribe((res) => this.handleResponse(res));

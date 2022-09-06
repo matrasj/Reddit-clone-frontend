@@ -1,22 +1,22 @@
 <div class="fixed">
   <div class="flex space-between con">
-    <div class="flex" style="cursor: pointer" routerLink="/">
+    <div class="flex logo-con"  style="cursor: pointer" routerLink="/">
       <img src="assets/images/logo.png"  class="logo-img"/>
       <h1>Reddit clone</h1>
     </div>
 
     <div class="search-bar flex" style="gap: 0">
       <input autocomplete="off"
-        placeholder="Search for users" name="keyword" class="form-control" (keyup)="onWriting($event)"/>
-      <button type="submit" class="btn btn-primary">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="search-icon">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-        </svg>
-      </button>
+        placeholder="Search for users..." name="keyword" class="form-control" (keyup)="onWriting($event)" [(ngModel)]="keyword"/>
+<!--      <button type="submit" class="btn btn-primary">-->
+<!--        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="search-icon">-->
+<!--          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />-->
+<!--        </svg>-->
+<!--      </button>-->
 
       <div class="user-results" *ngIf="searchedUsers.length > 0 && isShowingResults">
         <p class="bold">Found <span style="color: #0079d3">{{ searchedUsers.length}}</span> users</p>
-        <div [routerLink]="['/profile/', user.username]" class="result-con" *ngFor="let user of searchedUsers" >
+        <div [routerLink]="['/profile/', user.username]" (click)="keyword = ''" class="result-con" *ngFor="let user of searchedUsers" >
           <img [src]="user?.profileImagePath ? user?.profileImagePath : DEFAULT_IMAGE_PATH" class="result-img"/>
           <p class="username-result" >{{ user?.username }}</p>
         </div>

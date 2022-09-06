@@ -11,6 +11,7 @@ export class UserService {
   private API_UPLOAD_PROFILE_IMAGE_URL: string = "http://localhost:8081/api/v1/users/profile-image";
   private API_GET_USERNAMES: string = "http://localhost:8081/api/v1/users/usernames?";
   private API_SET_BIOGRAPHY_URL: string = "http://localhost:8081/api/v1/users/biography";
+  private API_DELETE_BIOGRAPHY_URL: string = "http://localhost:8081/api/v1/users/biography/delete";
   constructor(private httpClient : HttpClient) {
   }
 
@@ -32,5 +33,11 @@ export class UserService {
     return this.httpClient.post(`${this.API_SET_BIOGRAPHY_URL}`, biography, {
       responseType : 'text',
     });
+  }
+
+  public deleteBiography() : Observable<string> {
+    return this.httpClient.get(`${this.API_DELETE_BIOGRAPHY_URL}`, {
+      responseType : 'text'
+    })
   }
 }

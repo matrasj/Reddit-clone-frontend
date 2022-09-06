@@ -3,6 +3,8 @@ export class CommentResponseModel {
   public content : string,
   public createdAt : string,
   public authorUsername : string,
-  public postId : number) {
+  public postId : number,
+  public profileImagePath : string,
+  public commentImagePath : string ) {
   }
 }

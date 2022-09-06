@@ -2,8 +2,14 @@
 
   <div>
     <!-- V O T I N G -->
-    <div class="post">
-      
+    <div class="post" style="position: relative">
+      <div class="back-icon-con" routerLink="/">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="back-icon">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3" />
+        </svg>
+        <p>Back</p>
+      </div>
+
       <div class="voting-con flex-col">
         <svg (click)="likePost(post)" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="vote-icon" [ngClass]="isPostLiked ? 'liked' : ''">
           <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 6.75L12 3m0 0l3.75 3.75M12 3v18" />
@@ -16,14 +22,14 @@
       </div>
       <!-- M A I N  C O N T E N T -->
       <div class="main-content">
-        <div class="post-header flex user-data" [routerLink]="['/profile/', post?.authorUsername]">
-          <img class="user-image" [src]="post?.profileImagePath ? post?.profileImagePath : DEFAULT_PROFILE_IMAGE"/>
-         <div>
-           <p class="subreddit-name">{{ post?.subredditName }}</p>
-           <p class="post-time-stamp">Posted by {{ post?.authorUsername }}. {{ getFormattedDate(post?.createdAt) }} ago</p>
-         </div>
+        <div class="post-header flex space-between user-data" >
+          <div class="flex user-profile" [routerLink]="['/profile/', post?.authorUsername]">
+            <img class="user-image" [src]="post?.profileImagePath ? post?.profileImagePath : DEFAULT_PROFILE_IMAGE"/>
+            <p class="post-time-stamp">Posted by <span class="username">{{ post?.authorUsername }}</span>. {{ getFormattedDate(post?.createdAt) }} ago</p>
+          </div>
+          <p class="subreddit-name">{{ post?.subredditName }}</p>
         </div>
-        <hr/>
+        <hr id="post-line"/>
 
         <div class="post-data">
           <h1 class="post-title">{{ post?.title }}</h1>
@@ -31,18 +37,28 @@
         </div>
         <img *ngIf="post?.postImagePath" [src]="post?.postImagePath" class="post-img"/>
         <hr/>
-        <div *ngIf="isLogged else userNotAuthenticated">
-          <p>Comment as <span class="author">{{ username }}</span></p>
+        <div *ngIf="isLogged else userNotAuthenticated" >
+          <p id="comment-author">Comment as <span class="author">{{ username }}</span></p>
           <hr/>
           <form [formGroup]="postFormGroup" (ngSubmit)="onCommentCreating(post)">
             <div class="form-row" formGroupName="post">
-            <textarea class="form-control"
+              <editor formControlName="content"
+                      [ngClass]="content.errors && (content.touched || content.dirty) ? 'is-invalid' : ''"
+                      id="content"
                       placeholder="Your Thoughts?"
-                      formControlName="content"
-                      [ngClass]="content.errors && (content.touched || content.dirty) ? 'is-invalid' : ''">
-          </textarea>
+                      class="editor"
+                      [init]="{plugins : 'link'}"
+              >
+              </editor>
               <div class="invalid-feedback" >
                 Comment can not be blank!
+              </div>
+              <div class="form-row" style="margin-top: 2.4rem">
+                <div>
+                  <label for="image">Upload image</label>
+                  <input type="file" class="form-control"  id="image"
+                         (change)="onFileSelected($event)">
+                </div>
               </div>
               <button class="main-btn">Comment</button>
             </div>
@@ -61,12 +77,17 @@
       <h1>Comments</h1>
 
       <div *ngFor="let comment of comments" class="comment">
-        <p class="flex" style="margin-bottom: 1.2rem">
-          <span class="author">{{ comment.authorUsername }}</span>
+        <div class="flex user-data"  [routerLink]="['/profile/', comment?.authorUsername]" style="margin-bottom: 1.2rem" >
+          <div class="flex">
+            <img class="profile-comment-img" [src]="comment?.profileImagePath ? comment?.profileImagePath : DEFAULT_PROFILE_IMAGE"/>
+            <span class="author">{{ comment?.authorUsername }}</span>
+          </div>
           <span class="date">{{ getFormattedDate(comment.createdAt)}} ago</span>
-        </p>
+
+        </div>
 
         <p class="content" [innerHTML]="comment.content"></p>
+        <img *ngIf="comment.commentImagePath" [src]="comment?.commentImagePath" class="comment-image"/>
       </div>
 
       <div>

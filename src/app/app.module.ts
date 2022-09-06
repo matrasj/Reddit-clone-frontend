@@ -42,8 +42,9 @@ import { CreateBiographyPopupComponent } from './user-profile/create-biography-p
 import {SocialMediaLinkService} from "./service/social-media-link-service";
 import { ChatComponent } from './chat/chat.component';
 import {WebSocketService} from "./service/web-socket-service";
-
-
+import { RetrievePasswordComponent } from './retrieve-password/retrieve-password.component';
+import { ConfirmPostDeletionComponent } from './confirm-post-deletion/confirm-post-deletion.component';
+import { EditSocialMediaLinkComponent } from './user-profile/edit-social-media-link/edit-social-media-link.component';
 const routes = [
   { path : "login", component : LoginPageComponent},
   { path : "register", component : RegisterPageComponent},
@@ -61,7 +62,8 @@ const routes = [
       { path : '', component: UserPostsComponent},
       { path : 'settings', component: UserSettingsComponent}
     ]},
-  { path : "chat/:username", component: ChatComponent}
+  { path : "chat/:username", component: ChatComponent},
+
 
 
 
@@ -89,6 +91,10 @@ const routes = [
     CreateSocialMediaLinkPopupComponent,
     CreateBiographyPopupComponent,
     ChatComponent,
+    RetrievePasswordComponent,
+    ConfirmPostDeletionComponent,
+    EditSocialMediaLinkComponent,
+
 
   ],
   imports: [

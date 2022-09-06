@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {MatDialog} from "@angular/material/dialog";
+import {Component, Inject, OnInit} from '@angular/core';
+import {MAT_DIALOG_DATA, MatDialog} from "@angular/material/dialog";
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {UserService} from "../../service/user-service";
 import {ToastrService} from "ngx-toastr";
@@ -13,15 +13,21 @@ import {BiographyModel} from "../../model/biography-model";
 export class CreateBiographyPopupComponent implements OnInit {
 
   biographyFormGroup : FormGroup | any;
-  constructor(private dialogRef : MatDialog,
+  constructor(@Inject(MAT_DIALOG_DATA) public data : any,
+              private dialogRef : MatDialog,
               private formBuilder : FormBuilder,
               private userService : UserService,
-              private toastService : ToastrService) { }
-
-  ngOnInit(): void {
+              private toastService : ToastrService) {
     this.biographyFormGroup = this.formBuilder.group({
       biography : new FormControl('', [Validators.maxLength(100), Validators.required])
     })
+    if (data && data?.biography) {
+      this.biography.value = data.biography;
+    }
+  }
+
+  ngOnInit(): void {
+
   }
 
   get biography() {

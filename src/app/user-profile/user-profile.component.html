@@ -1,11 +1,22 @@
-<div class="container flex">
+<div class="container flex" >
   <div class="user-main-info">
     <img [src]="user?.profileImagePath ? user?.profileImagePath : DEFAULT_PROFILE_IMAGE" class="avatar-img"/>
     <div class="data-con">
       <p class="username" >{{ username }}</p>
       <div class="margin-con">
         <p class="title">Biography</p>
-        <p class="biography" *ngIf="user?.biography else noBiography">{{ user?.biography }}</p>
+        <div class="flex">
+          <div *ngIf="isAuthenticated && user?.biography" ngbDropdown class="float-right">
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button  ngbDropdownItem (click)="editBiography(user?.biography)" >Edit</button>
+              <button  ngbDropdownItem (click)="deleteBiography()">Delete</button>
+            </div>
+            <div class="userdetails"  ngbDropdownToggle>
+
+            </div>
+          </div>
+          <p class="biography" *ngIf="user?.biography else noBiography">{{ user?.biography }}</p>
+        </div>
         <ng-template #noBiography>
           <p class="alert alert-warning">No biography.</p>
         </ng-template>
@@ -15,7 +26,18 @@
         <p class="title">Social media links</p>
         <div *ngIf="user?.socialMediaLinks?.length > 0; else noSocialMediaLinks">
           <div class="social-media-link-con" *ngFor="let link of user?.socialMediaLinks">
-            <a class="social-media-name" [href]="link?.url" target="_blank">{{ upperCaseFirstLetter(link?.socialMediaName)}} 👇 </a>
+            <div  class="flex" style="gap: 1rem">
+              <div *ngIf="isAuthenticated" ngbDropdown class="float-right">
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                  <button  ngbDropdownItem >Edit</button>
+                  <button  ngbDropdownItem (click)="onDeletingSocialMediaLink(link?.id)" >Delete</button>
+                </div>
+                <div class="userdetails"  ngbDropdownToggle>
+
+                </div>
+              </div>
+              <a class="social-media-name" [href]="link?.url" target="_blank">{{ upperCaseFirstLetter(link?.socialMediaName)}} 👇 </a>
+            </div>
           </div>
         </div>
 
@@ -42,7 +64,6 @@
       <button class="main-btn" style="width: 100%" [routerLink]="['/chat/', username]">Send message</button>
     </div>
   </div>
-  <div style="width: 100%">
-    <router-outlet></router-outlet>
-  </div>
+  <router-outlet></router-outlet>
+
 </div>

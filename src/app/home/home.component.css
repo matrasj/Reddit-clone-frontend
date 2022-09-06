@@ -1,7 +1,7 @@
 .main-con {
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: center;
   gap: 1rem;
   max-width: 120rem;
   min-width: 20rem;
@@ -9,13 +9,37 @@
   padding: 1.2rem 3.4rem
 }
 
-.outlet-con {
-  width: 75%;
-}
+
 
 
 
 app-action-panel {
   width: 25%;
+}
 
+.outlet-con {
+  width: 640px;
+}
+
+@media only screen and (max-width: 1000px) {
+  app-action-panel {
+    width: 100%;
+  }
+
+  .outlet-con {
+    width: 100%;
+  }
+
+  .outlet-con router-outlet {
+    width: 100%;
+  }
+
+  .main-con {
+    flex-direction: column;
+    padding: 0.6rem;
+  }
+
+  .flex-col {
+    gap: 2rem;
+  }
 }

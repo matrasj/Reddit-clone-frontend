@@ -49,6 +49,8 @@ export class CreatePostComponent implements OnInit {
         .subscribe((res) => {
           this.toastService.success(res, "Success");
           this.router.navigate(['']);
+        }, error => {
+          this.toastService.error("Something went wrong")
         });
     }
   }

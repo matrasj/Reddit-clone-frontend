@@ -1,5 +1,19 @@
 
   <div class="post">
+    <div ngbDropdown class="menu" *ngIf="post?.authorUsername === currentUsername">
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+        <button ngbDropdownItem (click)="openConfirmDeletion()">Delete</button>
+        <button ngbDropdownItem>Update</button>
+      </div>
+      <button class="options-btn" ngbDropdownToggle>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="options-icon">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+        </svg>
+
+      </button>
+    </div>
+
+
     <!-- V O T I N G -->
     <div class="voting-con flex-col">
       <svg (click)="likePost(post)" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="vote-icon" [ngClass]="isPostLiked ? 'liked' : ''">
@@ -13,8 +27,8 @@
     </div>
     <!-- M A I N  C O N T E N T -->
     <div class="main-content">
-      <div class="post-header flex space-between user-data" [routerLink]="['/profile/', post?.authorUsername]">
-        <div class="flex">
+      <div class="post-header flex space-between user-data" >
+        <div class="flex user-profile" [routerLink]="['/profile/', post?.authorUsername]">
           <img class="user-image" [src]="post?.profileImagePath ? post?.profileImagePath : DEFAULT_IMAGE_PATH"/>
           <p class="post-time-stamp">Posted by <span class="username">{{ post?.authorUsername }}</span>. {{ getFormattedDate(post?.createdAt) }} ago</p>
         </div>

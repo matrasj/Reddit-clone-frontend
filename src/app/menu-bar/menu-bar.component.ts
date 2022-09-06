@@ -11,11 +11,13 @@ import {UserSearchModel} from "../model/user-search-model";
   styleUrls: ['./menu-bar.component.css']
 })
 export class MenuBarComponent implements OnInit {
+  keyword : string = '';
   isAuthenticated : boolean = false;
   username : any;
   currentUser : UserModel | any;
   DEFAULT_IMAGE_PATH : string = "assets/images/profile-images/default-image.png";
   isShowingResults : boolean = false;
+
   searchedUsers : UserSearchModel[] = [];
   constructor(private authService : AuthService,
               private router : Router,

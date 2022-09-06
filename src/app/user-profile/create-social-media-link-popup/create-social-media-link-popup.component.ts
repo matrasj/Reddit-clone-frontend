@@ -21,7 +21,7 @@ export class CreateSocialMediaLinkPopupComponent implements OnInit {
     this.socialMediaLinkFormGroup = this.formBuilder.group({
       socialMediaLink : this.formBuilder.group({
         socialMediaName : new FormControl('', [Validators.required, Validators.minLength(2)]),
-        url : new FormControl('', [Validators.pattern("(https?:\\/\\/(?:www\\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s]{2,}|www\\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s]{2,}|https?:\\/\\/(?:www\\.|(?!www))[a-zA-Z0-9]+\\.[^\\s]{2,}|www\\.[a-zA-Z0-9]+\\.[^\\s]{2,})")])
+        url : new FormControl('', [Validators.pattern("(https?:\\/\\/(?:www\\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s]{2,}|www\\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s]{2,}|https?:\\/\\/(?:www\\.|(?!www))[a-zA-Z0-9]+\\.[^\\s]{2,}|www\\.[a-zA-Z0-9]+\\.[^\\s]{2,})"), Validators.required])
       })
     })
   }
@@ -43,6 +43,7 @@ export class CreateSocialMediaLinkPopupComponent implements OnInit {
       this.socialMediaLinkFormGroup.markAllAsTouched();
     } else {
       this.socialMediaLinkService.createSocialLink(new SocialMediaLinkModel(
+        null,
         this.socialMediaUrl.value,
         this.socialMediaName.value
       )).subscribe((responseMessage) => {

@@ -12,6 +12,7 @@ export class PostService {
   private API_GET_POST : string = "http://localhost:8081/api/v1/posts/id/"
   private API_POSTS_BY_USERNAME_URL: string = "http://localhost:8081/api/v1/posts/findByAuthorUsername?";
   private API_POSTS_BY_USERNAME_AND_KEYWORD: string = "http://localhost:8081/api/v1/posts/findByAuthorUsernameAndKeyword?";
+  private API_DELETE_POST_URL : string = "http://localhost:8081/api/v1/posts/delete/";
   constructor(private httpClient : HttpClient) {
   }
 
@@ -73,6 +74,7 @@ export class PostService {
   }
 
   getAttributesAfterLoading(isPostLiked : boolean, isPostDisliked : boolean, post : PostModel) {
+
     switch (post.likedStatus) {
       case VoteType.VOTE_UP.valueOf() : {
         isPostLiked = true;
@@ -96,6 +98,12 @@ export class PostService {
                                pageNumber : number,
                                pageSize : number) : Observable<GetResponse> {
     return this.httpClient.get<GetResponse>(`${this.API_POSTS_BY_USERNAME_AND_KEYWORD}username=${username}&keyword=${keyword}&pageNumber=${pageNumber}&pageSize=${pageSize}`);
+  }
+
+  deletePostById(postId : number)  : Observable<string>{
+    return this.httpClient.get(`${this.API_DELETE_POST_URL}${postId}`, {
+      responseType : 'text'
+    });
   }
 
 }

@@ -30,3 +30,9 @@ label {
   right: 0;
   top:0;
 }
+
+@media only screen and (max-width: 1000px) {
+  .container {
+    width: 100%;
+  }
+}
