@@ -18,13 +18,19 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+Project with Angular on frontend and Spring Boot backend. Topic of a project is reddit clone and learn these technologies.
+In project I implemented functionalities like:
+- Registraion using confirmation token 
+- Jwt authorization
+- Post and comments CRUD operations
+- Image upload either in posts and comments
+- Liked comments
+- Profile social media links, biography manipulation
+- Pagination with posts, comments
+- Search users, posts, comments
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Below i attach a couple of screenshots
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 ![305389936_5587286691331962_2526166607200552799_n](https://user-images.githubusercontent.com/95829811/188904773-159b5c98-a43e-4aa2-9c2f-7f1a19967d30.png)
 ![305608014_1170619287182602_9209853381037184530_n](https://user-images.githubusercontent.com/95829811/188904778-b4717c22-7314-4cba-8f91-438c64893a4b.png)
 ![305811961_1721004098261271_2627019689672709907_n](https://user-images.githubusercontent.com/95829811/188904783-29e1f60d-c7e9-4f09-b3c1-f427c5764964.png)
