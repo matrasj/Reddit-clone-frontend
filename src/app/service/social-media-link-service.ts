@@ -21,4 +21,10 @@ export class SocialMediaLinkService {
       responseType : 'text'
     })
   }
+
+  updateSocialMediaLink(socialMediaLink : SocialMediaLinkModel) : Observable<string> {
+    return this.httpClient.put(`${this.API_SOCIAL_MEDIA_URL}`, socialMediaLink, {
+      responseType : 'text'
+    });
+  }
 }

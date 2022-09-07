@@ -29,7 +29,7 @@
             <div  class="flex" style="gap: 1rem">
               <div *ngIf="isAuthenticated" ngbDropdown class="float-right">
                 <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                  <button  ngbDropdownItem >Edit</button>
+                  <button  ngbDropdownItem (click)="openEditSocialMediaLinkPopup(link)" >Edit</button>
                   <button  ngbDropdownItem (click)="onDeletingSocialMediaLink(link?.id)" >Delete</button>
                 </div>
                 <div class="userdetails"  ngbDropdownToggle>

@@ -44,7 +44,10 @@ import { ChatComponent } from './chat/chat.component';
 import {WebSocketService} from "./service/web-socket-service";
 import { RetrievePasswordComponent } from './retrieve-password/retrieve-password.component';
 import { ConfirmPostDeletionComponent } from './confirm-post-deletion/confirm-post-deletion.component';
-import { EditSocialMediaLinkComponent } from './user-profile/edit-social-media-link/edit-social-media-link.component';
+import {
+  EditSocialMediaLinkPopupComponent
+} from "./user-profile/edit-social-media-link-popup/edit-social-media-link-popup.component";
+
 const routes = [
   { path : "login", component : LoginPageComponent},
   { path : "register", component : RegisterPageComponent},
@@ -93,7 +96,7 @@ const routes = [
     ChatComponent,
     RetrievePasswordComponent,
     ConfirmPostDeletionComponent,
-    EditSocialMediaLinkComponent,
+    EditSocialMediaLinkPopupComponent
 
 
   ],

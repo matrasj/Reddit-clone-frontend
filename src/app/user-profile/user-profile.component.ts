@@ -12,6 +12,8 @@ import {
 import {CreateBiographyPopupComponent} from "./create-biography-popup/create-biography-popup.component";
 import {ToastrService} from "ngx-toastr";
 import {SocialMediaLinkService} from "../service/social-media-link-service";
+import {EditSocialMediaLinkPopupComponent} from "./edit-social-media-link-popup/edit-social-media-link-popup.component";
+import {SocialMediaLinkModel} from "../model/social-media-link-model";
 
 @Component({
   selector: 'app-user-profile',
@@ -86,6 +88,16 @@ export class UserProfileComponent implements OnInit {
 
   openCreateSocialMediaLinkPopup() {
     this.dialogRef.open(CreateSocialMediaLinkPopupComponent);
+  }
+
+  openEditSocialMediaLinkPopup(link : SocialMediaLinkModel) {
+    this.dialogRef.open(EditSocialMediaLinkPopupComponent, {
+      data : {
+        linkId : link.id,
+        url : link.url,
+        socialMediaName : link.socialMediaName
+      }
+    })
   }
 
   private fetchUserPosts(username: string) {
