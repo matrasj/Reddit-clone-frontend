@@ -4,7 +4,7 @@ In project I implemented functionalities like:
 - Jwt authorization
 - Post and comments CRUD operations
 - Image upload either in posts and comments
-- Liked comments
+- Like comments
 - Profile social media links, biography manipulation
 - Pagination with posts, comments
 - Search users, posts, comments
