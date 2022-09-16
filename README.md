@@ -1,22 +1,42 @@
 Project with Angular on frontend and Spring Boot backend. Topic of a project is reddit clone and learn these technologies.
-In project I implemented functionalities like:
-- Registraion using confirmation token 
-- Jwt authorization
-- Post and comments CRUD operations
-- Image upload either in posts and comments
-- Like comments
-- Profile social media links, biography manipulation
-- Pagination with posts, comments
-- Search users, posts, comments
-
+As a user you can:
+- Create account and login
+- Create, update, delete posts with images (only for logged in users)
+- Like posts, comment posts with images (also for only logged in users)
+- Browsing all posts with pagination for either non-authencitated user
+- Add your profile data like: 
+  - short description
+  - links to your social media
+  - set profile immage 
+  - see your posts history
+  
+  
 Below i attach a couple of screenshots
 
-![305389936_5587286691331962_2526166607200552799_n](https://user-images.githubusercontent.com/95829811/188904773-159b5c98-a43e-4aa2-9c2f-7f1a19967d30.png)
-![305608014_1170619287182602_9209853381037184530_n](https://user-images.githubusercontent.com/95829811/188904778-b4717c22-7314-4cba-8f91-438c64893a4b.png)
-![305811961_1721004098261271_2627019689672709907_n](https://user-images.githubusercontent.com/95829811/188904783-29e1f60d-c7e9-4f09-b3c1-f427c5764964.png)
-![304769140_1072695236971495_6020401517927037497_n](https://user-images.githubusercontent.com/95829811/188904792-3d3e864b-4c6e-4f46-b185-aadc732c3719.png)
-![304797537_2019980354856805_1686255908746072340_n](https://user-images.githubusercontent.com/95829811/188904794-eadfe006-a8c1-4563-b603-460028eb6225.png)
-![305003849_793354725182017_2710403774241573978_n](https://user-images.githubusercontent.com/95829811/188904796-8f85bd4b-5888-4623-900e-51e74f0a08e3.png)
-![305139507_1133875404154265_4711069545315294221_n](https://user-images.githubusercontent.com/95829811/188904798-96f17e28-ed61-47c2-abd4-e0dd7dc36ce0.png)
-![305368143_617217323306080_4408620194530393972_n](https://user-images.githubusercontent.com/95829811/188904799-63a9f915-f044-4818-807b-d66fcadc1efb.png)
-![305385012_806948706985694_7516357868447633376_n](https://user-images.githubusercontent.com/95829811/188904805-2863b130-c39c-447d-a9ee-f6992c127f62.png)
+Main page
+![image](https://user-images.githubusercontent.com/95829811/190677444-60fa7ff8-02a3-4583-95c3-fa9ef9ec94b8.png)
+
+Registrtion form
+![image](https://user-images.githubusercontent.com/95829811/190677663-31178ef5-f367-40c7-971b-9ce1c7bec6b0.png)
+
+
+Login form
+![image](https://user-images.githubusercontent.com/95829811/190677541-5ef2ea63-8116-461a-bc8e-5eebe23a0232.png)
+
+After account creating and logging in
+![image](https://user-images.githubusercontent.com/95829811/190677737-0f894128-e6de-4264-8baf-48df1f615c6d.png)
+
+Liking post
+![image](https://user-images.githubusercontent.com/95829811/190677785-3cadd88e-2eef-4077-a26b-63c8d247dc6b.png)
+
+Post in main page view
+![image](https://user-images.githubusercontent.com/95829811/190677884-a6c15129-5f18-43c1-a76b-fc638e12a3ab.png)
+
+
+Comment form for authenticated user
+![image](https://user-images.githubusercontent.com/95829811/190678011-198bef28-823b-40ca-bcdc-ee7ff9c39814.png)
+
+
+
+
+
