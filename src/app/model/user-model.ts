@@ -5,7 +5,7 @@ export class UserModel {
               public username : string,
               public postsNumber : number,
               public commentsNumber : number,
-              public profileImagePath : string,
+              public profileImageLink : string,
               public biography : string,
               public socialMediaLinks : SocialMediaLinkModel[]) {
   }

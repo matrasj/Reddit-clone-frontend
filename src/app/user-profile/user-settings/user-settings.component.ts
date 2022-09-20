@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {UserService} from "../../service/user-service";
 import {Event, Router} from "@angular/router";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-user-settings',
@@ -10,6 +11,7 @@ import {Event, Router} from "@angular/router";
 export class UserSettingsComponent implements OnInit {
   selectedProfileImage : File | any;
   constructor(private userService : UserService,
+              private toastrService : ToastrService,
               private router : Router) { }
 
   ngOnInit(): void {
@@ -26,7 +28,10 @@ export class UserSettingsComponent implements OnInit {
         console.log(error);
       });
 
-    window.location.reload();
+    setTimeout(() => {
+      window.location.reload();
+      this.toastrService.success("Changed profile image", "Success!")
+    }, 1000);
   }
 
 

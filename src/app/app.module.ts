@@ -47,6 +47,7 @@ import { ConfirmPostDeletionComponent } from './confirm-post-deletion/confirm-po
 import {
   EditSocialMediaLinkPopupComponent
 } from "./user-profile/edit-social-media-link-popup/edit-social-media-link-popup.component";
+import {CanDeactivateAuthGuard} from "./user-profile/create-biography-popup/can-deactivate-auth-guard";
 
 const routes = [
   { path : "login", component : LoginPageComponent},
@@ -97,8 +98,6 @@ const routes = [
     RetrievePasswordComponent,
     ConfirmPostDeletionComponent,
     EditSocialMediaLinkPopupComponent
-
-
   ],
   imports: [
     BrowserModule,

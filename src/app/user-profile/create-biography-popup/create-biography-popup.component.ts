@@ -4,13 +4,16 @@ import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {UserService} from "../../service/user-service";
 import {ToastrService} from "ngx-toastr";
 import {BiographyModel} from "../../model/biography-model";
+import {CanComponentDeactivate} from "./can-deactivate-auth-guard";
+import {Observable} from "rxjs";
+import {UrlTree} from "@angular/router";
 
 @Component({
   selector: 'app-create-biography-popup',
   templateUrl: './create-biography-popup.component.html',
   styleUrls: ['./create-biography-popup.component.css']
 })
-export class CreateBiographyPopupComponent implements OnInit {
+export class CreateBiographyPopupComponent implements OnInit, CanComponentDeactivate{
 
   biographyFormGroup : FormGroup | any;
   constructor(@Inject(MAT_DIALOG_DATA) public data : any,
@@ -50,5 +53,11 @@ export class CreateBiographyPopupComponent implements OnInit {
         })
     }
   }
+
+  canDeactivate(): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+    return confirm("Do you want to discard?")
+  }
+
+
 
 }

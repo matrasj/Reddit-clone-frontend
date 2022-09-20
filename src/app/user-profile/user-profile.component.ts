@@ -48,6 +48,7 @@ export class UserProfileComponent implements OnInit {
 
         this.authService.username.subscribe((currentUserUsername) => {
           currentUserUsername === this.username ? this.ownerAccount = true : this.ownerAccount = false;
+          console.log(this.ownerAccount, " HERE")
 
           this.userService.getUserData(this.username)
             .subscribe((user) => {

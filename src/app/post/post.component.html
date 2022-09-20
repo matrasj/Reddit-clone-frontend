@@ -29,7 +29,7 @@
     <div class="main-content">
       <div class="post-header flex space-between user-data" >
         <div class="flex user-profile" [routerLink]="['/profile/', post?.authorUsername]">
-          <img class="user-image" [src]="post?.profileImagePath ? post?.profileImagePath : DEFAULT_IMAGE_PATH"/>
+          <img class="user-image" [src]="post?.profileImageLink ? post?.profileImageLink : DEFAULT_IMAGE_PATH"/>
           <p class="post-time-stamp">Posted by <span class="username">{{ post?.authorUsername }}</span>. {{ getFormattedDate(post?.createdAt) }} ago</p>
         </div>
         <p class="subreddit-name">{{ post?.subredditName }}</p>
@@ -39,7 +39,7 @@
       <div class="post-data">
         <h1 class="post-title">{{ post?.title }}</h1>
         <p class="post-desc" [innerHTML]="post?.content"></p>
-        <img *ngIf="post?.postImagePath" [src]="post?.postImagePath" class="post-img"/>
+        <img *ngIf="post?.postImageLink" [src]="post?.postImageLink" class="post-img"/>
 
       </div>
       <hr/>

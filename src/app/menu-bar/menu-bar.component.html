@@ -17,7 +17,7 @@
       <div class="user-results" *ngIf="searchedUsers.length > 0 && isShowingResults">
         <p class="bold">Found <span style="color: #0079d3">{{ searchedUsers.length}}</span> users</p>
         <div [routerLink]="['/profile/', user.username]" (click)="keyword = ''" class="result-con" *ngFor="let user of searchedUsers" >
-          <img [src]="user?.profileImagePath ? user?.profileImagePath : DEFAULT_IMAGE_PATH" class="result-img"/>
+          <img [src]="user?.profileImageLink ? user?.profileImageLink : DEFAULT_IMAGE_PATH" class="result-img"/>
           <p class="username-result" >{{ user?.username }}</p>
         </div>
       </div>
@@ -37,7 +37,7 @@
             <button  ngbDropdownItem (click)="logout()">Logout</button>
           </div>
           <button class="userdetails" id="dropdownBasic1" ngbDropdownToggle>
-            <img class="account-icon" [src]="currentUser?.profileImagePath ? currentUser?.profileImagePath : DEFAULT_IMAGE_PATH"/>
+            <img class="account-icon" [src]="currentUser?.profileImageLink ? currentUser?.profileImageLink : DEFAULT_IMAGE_PATH"/>
             {{username}}
           </button>
         </div>
