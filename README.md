@@ -4,7 +4,7 @@ As a user you can:
 - Create, update, delete posts with images (only for logged in users)
 - Like posts, comment posts with images (also for only logged in users)
 - Browsing all posts with pagination for either non-authencitated user
-- Add your profile data like: 
+- Add into your profile data like: 
   - short description
   - links to your social media
   - set profile immage 
@@ -82,6 +82,16 @@ Some responsive screenshots
 
 
 ###################################################
-Images are kept in my disk, angular project in assets. Logic for this functionality has been written in backend here --> https://github.com/pozerinhooo/Reddit-Clone-backend
+(EDIT) During implemenation I came across with a problem of storing images. 
+I've read about 3 aproaches.
+  1. Keeping binary files in database
+  2. Storing files in my local drive and moving image files into project folder
+  3. Storing images in cloud or internal server.
+ 
+ Firstly I implemented this functionality with 2 aproach however after some thoughts, I decided to change it for option 3 (Amazon S3).
+ I wanted to make project more real-world and by the way learn Amazon S3.
+ 
+ ![image](https://user-images.githubusercontent.com/95829811/191217370-dad6f5b6-c542-435f-9d3a-c1ad685a995c.png)
+
 
 
