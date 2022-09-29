@@ -1,0 +1,73 @@
+<div class="container flex" style="justify-content: center" >
+  <div class="user-main-info">
+    <img [src]="user?.profileImageLink ? user?.profileImageLink : DEFAULT_PROFILE_IMAGE" class="avatar-img"/>
+    <div class="data-con">
+      <p class="username" >{{ username }}</p>
+      <div class="margin-con">
+        <p class="title">Biography</p>
+        <div class="flex">
+          <div *ngIf="isAuthenticated && user?.biography && ownerAccount" ngbDropdown class="float-right">
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1" >
+              <button  ngbDropdownItem (click)="editBiography(user?.biography)" >Edit</button>
+              <button  ngbDropdownItem (click)="deleteBiography()">Delete</button>
+            </div>
+            <div class="userdetails"  ngbDropdownToggle>
+
+            </div>
+          </div>
+          <p class="biography" *ngIf="user?.biography else noBiography">{{ user?.biography }}</p>
+        </div>
+        <ng-template #noBiography>
+          <p class="alert alert-warning">No biography.</p>
+        </ng-template>
+      </div>
+      <div class="social-links-con" style="margin-bottom: 2.4rem">
+        <!--N E W  FUNCIONALITY -->
+        <p class="title">Social media links</p>
+        <div *ngIf="user?.socialMediaLinks?.length > 0; else noSocialMediaLinks">
+          <div class="social-media-link-con" *ngFor="let link of user?.socialMediaLinks">
+            <div  class="flex" style="gap: 1rem">
+              <div *ngIf="isAuthenticated && ownerAccount" ngbDropdown class="float-right">
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                  <button  ngbDropdownItem (click)="openEditSocialMediaLinkPopup(link)" >Edit</button>
+                  <button  ngbDropdownItem (click)="onDeletingSocialMediaLink(link?.id)" >Delete</button>
+                </div>
+                <div class="userdetails"  ngbDropdownToggle>
+
+                </div>
+              </div>
+              <a class="social-media-name" [href]="link?.url" target="_blank">{{ upperCaseFirstLetter(link?.socialMediaName)}} 👇 </a>
+            </div>
+          </div>
+        </div>
+
+        <ng-template #noSocialMediaLinks>
+          <p class="alert alert-warning">No social media links.</p>
+        </ng-template>
+      </div>
+
+      <div class="flex-column" *ngIf="ownerAccount">
+        <button class="second-btn" style="border-radius: 2rem" (click)="onBiographyCreating()">Set biography</button>
+        <button class="second-btn" style="border-radius: 2rem" (click)="openCreateSocialMediaLinkPopup()">Add social link</button>
+        <button class="main-btn" style="border-radius: 2rem" [routerLink]="['settings']">Account settings</button>
+        <button class="main-btn create-btn" style="border-radius: 2rem" routerLink="/create-post">Create post</button>
+      </div>
+      <div class="scores" *ngIf="ownerAccount">
+        <p>Your have posted
+        <span class="data" *ngIf="user?.postsNumber">{{ user?.postsNumber > 1 ? user?.postsNumber + ' posts' : user?.postsNumber + ' post' }}</span>
+          <span *ngIf="!user?.postsNumber">0 posts</span>
+        </p>
+        <p>Your have added
+          <span class="data" *ngIf="user?.commentsNumber">{{ user?.commentsNumber > 1 ? user?.commentsNumber + ' comments' : user?.commentsNumber + ' comment' }}</span>
+          <span *ngIf="!user?.commentsNumber">0 comments</span>
+        </p>
+      </div>
+
+
+    </div>
+  </div>
+  <div style="width: 100%">
+    <router-outlet></router-outlet>
+  </div>
+
+</div>

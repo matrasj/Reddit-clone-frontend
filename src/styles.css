@@ -25,6 +25,7 @@ button {
   background-color: #fff;
   color: #0079d3;
   border: solid 2px #0079d3;
+  transition: all 0.2s linear;
 }
 
 .second-btn:hover {
@@ -38,6 +39,7 @@ button {
   background-color: #0079d3;
   border: solid 2px #0079d3;
   color: #fff;
+  transition: all 0.2s linear;
 }
 
 .main-btn:hover {
@@ -106,4 +108,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   font-weight: bold;
   color: #0079d3;
   font-size: 1.4rem;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.space-between {
+  justify-content: space-between;
 }

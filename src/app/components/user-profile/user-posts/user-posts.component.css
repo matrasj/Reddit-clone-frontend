@@ -1,0 +1,127 @@
+.user-main-info, .user-posts {
+  background-color: #fff;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.user-posts {
+  width: 100%;
+
+
+}
+
+h1 {
+  margin-bottom: 2.4rem;
+}
+
+.username {
+  font-size: 2rem;
+  width: max-content !important;
+  font-weight: bold;
+  display: inline-block !important;
+}
+
+.user-posts {
+  padding: 3.2rem 2.8rem;
+}
+
+.user-posts h1 {
+  color: #333;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.posts-list-con {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  min-height: 50rem;
+}
+.data-con {
+  padding: 2rem;
+}
+
+.second-btn {
+
+}
+
+.create-btn {
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.data {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #0079d3;
+}
+
+p {
+  font-size: 1.4rem;
+  color: #333;
+}
+
+ngb-pagination ::ng-deep a{
+  font-size: 1.6rem;
+  margin-top: 1.2rem;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-bottom: 1.8rem;
+}
+.close-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 3rem;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.container {
+  position: absolute;
+}
+
+
+
+
+
+
+.search-icon {
+  width: 3rem;
+  height: 3rem;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+form {
+  width: 60%;
+}
+
+input {
+  height: 100%;
+  font-size: 1.8rem;
+  padding: 0.8rem 1.2rem;
+}
+
+.search-form {
+  margin-bottom: 2.8rem;
+}
+
+
+@media only screen and (max-width: 1000px) {
+  .user-posts {
+    padding: 1.2rem;
+  }
+
+}

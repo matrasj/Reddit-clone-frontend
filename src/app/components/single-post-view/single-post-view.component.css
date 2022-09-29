@@ -1,0 +1,270 @@
+
+
+.vote-icon {
+  width: 3rem;
+  stroke: #868e96;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+
+.vote-icon:hover {
+  transform: scale(1.2);
+  transition: all 0.2s linear;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+p {
+  margin: 0;
+  font-size: 1.4rem;
+  color: #333;
+  width: max-content;
+}
+
+.posts-con {
+  width: 100%;
+}
+
+.date {
+  color: #868e96;
+}
+
+.post, .comments-con {
+  padding: 2.8rem 3.4rem;
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  gap: 2.4rem;
+  background-color: #fff;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+
+.comments-con {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border-top: solid 1px #868e96;
+}
+
+.comments-con h1 {
+  color: #333;
+  font-weight: bold;
+  font-size: 3.2rem;
+}
+
+.comment {
+  border-left: solid 1px #868e96;
+  padding: 0.2rem 1.8rem 0.6rem 1.8rem;
+  margin-bottom: 1.2rem;
+}
+
+.author {
+  font-size: 1.6rem;
+  color: #0079d3;
+  font-weight: bold;
+}
+
+.main-content {
+  width: 100%;
+}
+
+.subreddit-name {
+  font-weight: bold;
+  color: #222;
+  font-size: 1.6rem;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.post-time-stamp {
+  font-size: 1.2rem;
+}
+
+.post-data {
+  margin-top: 2.8rem;
+  margin-bottom: 2.8rem;
+}
+
+.post-title {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #333;
+}
+
+textarea {
+  font-size: 1.6rem;
+  max-height: 30rem;
+  min-height: 10rem;
+}
+
+button {
+  margin-top: 0.8rem;
+}
+
+ngb-pagination ::ng-deep a{
+  font-size: 1.6rem;
+}
+
+.post {
+  position: relative;
+}
+
+
+.no-com {
+  width: 100%;
+}
+
+.voting-num {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.back-icon-con {
+  position: absolute;
+  width: 6rem;
+  height: 6rem;
+  right: 0;
+  top: -4%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #0079d3;
+  padding: 0.6rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+
+.profile-comment-img {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+.back-icon-con svg {
+  stroke: #fff;
+}
+
+.back-icon-con p {
+  color: #fff;
+}
+
+.back-icon-con:hover {
+  transform: translateY(-5%);
+  transition: all 0.2s linear;
+}
+.positive {
+  color: #12b886;
+}
+
+.negative {
+  color: #f03e3e;
+}
+
+.liked {
+  stroke: #12b886 !important;
+}
+
+.disliked {
+  stroke: #f03e3e !important;
+}
+
+.user-image {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+}
+
+.post-img {
+  width: 100%;
+}
+
+.form-row {
+  margin-bottom: 2.4rem;
+  display: block;
+  width: 100%;
+}
+
+input, editor {
+  font-size: 1.4rem;
+  width: 100%;
+}
+
+editor {
+  max-height: 40rem;
+}
+
+
+
+.comment-image {
+  width: 20rem;
+}
+
+.content {
+  width: 100%;
+  word-wrap: break-word;
+}
+
+.comment {
+  width: 100%;
+}
+
+.post-desc {
+  word-wrap: break-word;
+  width: 100%;
+}
+
+.comments-con {
+  width: 100%;
+}
+
+.comment-image {
+  width: 100%;
+}
+
+@media only screen and (max-width: 1000px) {
+  .post {
+    flex-direction: column-reverse;
+  }
+
+  .voting-con {
+    flex-direction: row;
+  }
+
+  .main-btn {
+    width: 100%;
+  }
+
+  .comments-con {
+    padding: 1.2rem;
+  }
+
+  .main-content hr {
+    display: none;
+  }
+
+  .post-header {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
+  #comment-author {
+    margin: 2.4rem 0 1.2rem 0;
+  }
+
+}

@@ -74,7 +74,7 @@ export class AuthService {
   }
 
   getUsername() {
-     return localStorage.getItem('username');
+    return localStorage.getItem('username');
   }
 }
 

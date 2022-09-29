@@ -1,0 +1,42 @@
+<div class="container flex" style="align-items: flex-start">
+  <div class="form-con">
+    <form [formGroup]="subredditFormGroup" (ngSubmit)="onSubredditCreating()">
+      <div formGroupName="subreddit">
+        <h1>Create Subreddit</h1>
+        <hr/>
+
+
+          <mat-form-field appearance="fill">
+            <mat-label >Title</mat-label>
+            <input matInput type="text"
+                   formControlName="title"
+                   placeholder="Enter subreddit's title" >
+            <mat-error *ngIf="title.errors && (title.touched || title.dirty)">Title must be valid</mat-error>
+          </mat-form-field>
+
+
+        <mat-form-field appearance="fill">
+          <mat-label >Description</mat-label>
+          <textarea matInput type="text"
+                 formControlName="description"
+                 placeholder="Enter subreddit's title" ></textarea>
+          <mat-error *ngIf="description.errors && (description.touched || description.dirty)">Description must be valid</mat-error>
+        </mat-form-field>
+
+        <div class="flex btns-con">
+          <button class="second-btn" type="button" routerLink="/">Discard</button>
+          <button class="main-btn" type="submit">Post</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="statue">
+    <h2 style="text-align: center">Reddit Clone - S T A T U E</h2>
+    <ul>
+      <li>Remember the human</li>
+      <li>Behave like you would in real life</li>
+      <li>Don't spam</li>
+    </ul>
+  </div>
+</div>
