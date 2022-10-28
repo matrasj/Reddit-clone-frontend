@@ -52,7 +52,6 @@ export class UserPostsComponent implements OnInit {
     return this.postService.getPostsByUsername(username, this.pageNumber - 1, this.pageSize)
       .subscribe((res) => {
         this.handleResponse(res);
-
       });
   }
 
@@ -61,6 +60,8 @@ export class UserPostsComponent implements OnInit {
 
     this.postService.getPostsByUsernameAndKeyword(this.username, this.keyword, this.pageNumber - 1, this.pageSize)
       .subscribe((res) => this.handleResponse(res));
+
+    this.keyword = '';
   }
 
   private handleResponse(data : any) {

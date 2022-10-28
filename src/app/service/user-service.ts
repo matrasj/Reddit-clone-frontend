@@ -22,7 +22,9 @@ export class UserService {
   public uploadProfileImage(profileImage : File | any) : Observable<string> {
     const formData = new FormData();
     formData.append("profileImage", profileImage);
-    return this.httpClient.post<string>(`${this.API_UPLOAD_PROFILE_IMAGE_URL}`, formData);
+    return this.httpClient.post(`${this.API_UPLOAD_PROFILE_IMAGE_URL}`, formData, {
+      responseType : 'text'
+    });
   }
 
   public getUsersUsernamesByKeyword(keyword : string) : Observable<UserSearchModel[]> {

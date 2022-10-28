@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
-import {NgToastService} from "ng-angular-popup";
 import {ToastrService} from "ngx-toastr";
 import {AuthService} from "../../service/auth-service";
 import {LoginRequestModel} from "../../model/login-request-model";

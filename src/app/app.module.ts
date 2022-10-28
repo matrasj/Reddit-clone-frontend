@@ -11,7 +11,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {AuthService} from "./service/auth-service";
 import {ToastrModule, ToastrService} from "ngx-toastr";
-import {NgToastModule} from "ng-angular-popup";
+// import {NgToastModule} from "ng-angular-popup";
 import {TokenInterceptor} from "./config/token-interceptor";
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import { HomeComponent } from './components/home/home.component';
@@ -102,7 +102,6 @@ const routes = [
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    NgToastModule,
     NgbModule,
     InfiniteScrollModule,
     NgxSpinnerModule,

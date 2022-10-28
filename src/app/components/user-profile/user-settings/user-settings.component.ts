@@ -21,7 +21,9 @@ export class UserSettingsComponent implements OnInit {
     event.preventDefault();
     this.userService.uploadProfileImage(this.selectedProfileImage)
       .subscribe((res) => {
-        this.toastrService.success(res)
+        location.reload();
+        this.toastrService.success(res);
+
 
       }, error => {
         this.toastrService.error("Error")
