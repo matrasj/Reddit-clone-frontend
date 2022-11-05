@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
-import {PostModel} from "../../model/post-model";
+import {PostModel} from "../../model/post/post-model";
 import {PostService} from "../../service/post-service";
 import {DateService} from "../../service/date-service";
 import {AuthService} from "../../service/auth-service";
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {CommentService} from "../../service/comment-service";
-import {CommentResponseModel} from "../../model/comment-response-model";
-import {CommentRequestModel} from "../../model/comment-request-model";
+import {CommentResponseModel} from "../../model/comment/comment-response-model";
+import {CommentRequestModel} from "../../model/comment/comment-request-model";
 import {Toast, ToastrService} from "ngx-toastr";
 import {NgxSpinnerModule, NgxSpinnerService} from "ngx-spinner";
 import {VotingService} from "../../service/voting-service";
@@ -49,7 +49,7 @@ export class SinglePostViewComponent implements OnInit {
 
     this.postFormGroup = this.formBuilder.group({
       post : this.formBuilder.group({
-          content : new FormControl('', [Validators.required, Validators.maxLength(250)])
+          content : new FormControl('', [Validators.required, Validators.maxLength(5000)])
       })
     })
   }

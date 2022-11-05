@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {DateService} from "../../service/date-service";
-import {PostModel} from "../../model/post-model";
+import {PostModel} from "../../model/post/post-model";
 import {VotingService} from "../../service/voting-service";
 import {AuthService} from "../../service/auth-service";
 import {ToastrService} from "ngx-toastr";
@@ -32,11 +32,15 @@ export class PostComponent implements OnInit {
               private dialogRef : MatDialog) { }
 
   ngOnInit(): void {
+
     this.authService.isAuthenticated
       .subscribe((isAuthenticated) => {
         if (isAuthenticated) {
           this.isLogged = isAuthenticated;
-          [this.isPostLiked, this.isPostDisliked] = this.postService.getAttributesAfterLoading(this.isPostLiked, this.isPostDisliked, this.post);
+          [this.isPostLiked, this.isPostDisliked] =
+            this.postService.getAttributesAfterLoading(this.isPostLiked, this.isPostDisliked, this.post);
+
+
         }
       });
 

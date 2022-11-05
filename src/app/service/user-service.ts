@@ -1,8 +1,8 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {UserModel} from "../model/user-model";
-import {UserSearchModel} from "../model/user-search-model";
+import {UserModel} from "../model/user/user-model";
+import {UserSearchModel} from "../model/user/user-search-model";
 import {BiographyModel} from "../model/biography-model";
 
 @Injectable()

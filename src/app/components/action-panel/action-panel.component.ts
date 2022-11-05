@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
 import {MatDialog, MatDialogModule} from "@angular/material/dialog";
 import {SubredditsPopupComponent} from "./subreddits-popup/subreddits-popup.component";
-import {SubredditModel} from "../../model/subreddit-model";
+import {SubredditModel} from "../../model/subreddit/subreddit-model";
 import {SubredditService} from "../../service/subreddit-service";
 
 @Component({

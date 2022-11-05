@@ -1,9 +1,9 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {CommentResponseModel} from "../model/comment-response-model";
-import {PostModel} from "../model/post-model";
-import {CommentRequestModel} from "../model/comment-request-model";
+import {CommentResponseModel} from "../model/comment/comment-response-model";
+import {PostModel} from "../model/post/post-model";
+import {CommentRequestModel} from "../model/comment/comment-request-model";
 
 @Injectable()
 export class CommentService {

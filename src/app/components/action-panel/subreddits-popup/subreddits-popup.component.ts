@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog} from "@angular/material/dialog";
 import {Router} from "@angular/router";
-import {SubredditModel} from "../../../model/subreddit-model";
+import {SubredditModel} from "../../../model/subreddit/subreddit-model";
 import {SubredditService} from "../../../service/subreddit-service";
 import {DateService} from "../../../service/date-service";
 

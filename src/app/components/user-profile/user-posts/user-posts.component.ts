@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {UserModel} from "../../../model/user-model";
-import {PostModel} from "../../../model/post-model";
+import {UserModel} from "../../../model/user/user-model";
+import {PostModel} from "../../../model/post/post-model";
 import {AuthService} from "../../../service/auth-service";
 import {UserService} from "../../../service/user-service";
 import {PostService} from "../../../service/post-service";

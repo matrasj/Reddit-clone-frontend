@@ -1,17 +1,17 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {SubredditModel} from "../model/subreddit-model";
-import {SubredditRequestModel} from "../model/subreddit-request-model";
-import {PostModel} from "../model/post-model";
+import {SubredditModel} from "../model/subreddit/subreddit-model";
+import {SubredditRequestModel} from "../model/subreddit/subreddit-request-model";
+import {PostModel} from "../model/post/post-model";
 
 @Injectable()
 export class SubredditService {
-  private API_SUBREDDIT_LIMIT_URL : string = "http://localhost:8081/api/v1/sub-reddit/limit?limit="
-  private API_SUBREDDIT_POST_URL : string = "http://localhost:8081/api/v1/sub-reddit";
-  private API_SUBREDDIT_ALL_URL : string  = "http://localhost:8081/api/v1/sub-reddit/all";
-  private API_SUBREDDIT_PAGINATION_URL: string = "http://localhost:8081/api/v1/sub-reddit";
-  private API_SUBREDDIT_PAGINATION_KEYWORD_URL: string = "http://localhost:8081/api/v1/sub-reddit/findByTitleOrDescriptionContainingKeyword";
+  private API_SUBREDDIT_LIMIT_URL : string = "http://localhost:8081/api/v1/sub-reddits/limit?limit="
+  private API_SUBREDDIT_POST_URL : string = "http://localhost:8081/api/v1/sub-reddits";
+  private API_SUBREDDIT_ALL_URL : string  = "http://localhost:8081/api/v1/sub-reddits/all";
+  private API_SUBREDDIT_PAGINATION_URL: string = "http://localhost:8081/api/v1/sub-reddits";
+  private API_SUBREDDIT_PAGINATION_KEYWORD_URL: string = "http://localhost:8081/api/v1/sub-reddits/findByTitleOrDescriptionContainingKeyword";
   constructor(private httpClient :  HttpClient) {
   }
 

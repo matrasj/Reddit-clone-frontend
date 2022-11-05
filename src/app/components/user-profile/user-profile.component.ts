@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from "../../service/auth-service";
 import {UserService} from "../../service/user-service";
-import {UserModel} from "../../model/user-model";
+import {UserModel} from "../../model/user/user-model";
 import {PostService} from "../../service/post-service";
-import {PostModel} from "../../model/post-model";
+import {PostModel} from "../../model/post/post-model";
 import {ActivatedRoute} from "@angular/router";
 import {MatDialog} from "@angular/material/dialog";
 import {

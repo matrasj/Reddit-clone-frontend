@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
-import {RegisterRequestModel} from "../../model/register-request-model";
+import {RegisterRequestModel} from "../../model/auth/register-request-model";
 import {AuthService} from "../../service/auth-service";
 import {ToastrService} from "ngx-toastr";
 import {Router} from "@angular/router";

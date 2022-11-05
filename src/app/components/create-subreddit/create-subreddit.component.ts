@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {ToastrService} from "ngx-toastr";
 import {SubredditService} from "../../service/subreddit-service";
-import {SubredditRequestModel} from "../../model/subreddit-request-model";
+import {SubredditRequestModel} from "../../model/subreddit/subreddit-request-model";
 import {Router} from "@angular/router";
 
 @Component({

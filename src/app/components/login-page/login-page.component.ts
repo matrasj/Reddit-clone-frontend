@@ -3,7 +3,7 @@ import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
 import {ToastrService} from "ngx-toastr";
 import {AuthService} from "../../service/auth-service";
-import {LoginRequestModel} from "../../model/login-request-model";
+import {LoginRequestModel} from "../../model/auth/login-request-model";
 import {Router} from "@angular/router";
 import {catchError, of, pipe} from "rxjs";
 

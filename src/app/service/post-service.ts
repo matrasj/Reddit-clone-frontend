@@ -1,8 +1,8 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {PostModel} from "../model/post-model";
-import {PostRequestModel} from "../model/post-request-model";
+import {PostModel} from "../model/post/post-model";
+import {PostRequestModel} from "../model/post/post-request-model";
 import {F} from "@angular/cdk/keycodes";
 
 @Injectable()
@@ -74,7 +74,6 @@ export class PostService {
   }
 
   getAttributesAfterLoading(isPostLiked : boolean, isPostDisliked : boolean, post : PostModel) {
-
     switch (post.likedStatus) {
       case VoteType.VOTE_UP.valueOf() : {
         isPostLiked = true;

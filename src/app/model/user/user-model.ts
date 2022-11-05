@@ -1,4 +1,4 @@
-import {SocialMediaLinkModel} from "./social-media-link-model";
+import {SocialMediaLinkModel} from "../social-media-link-model";
 
 export class UserModel {
   constructor(public email : string,

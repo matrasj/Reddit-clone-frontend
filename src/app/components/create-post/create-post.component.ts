@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {Form, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {SubredditService} from "../../service/subreddit-service";
-import {SubredditModel} from "../../model/subreddit-model";
+import {SubredditModel} from "../../model/subreddit/subreddit-model";
 import {PostService} from "../../service/post-service";
-import {PostRequestModel} from "../../model/post-request-model";
+import {PostRequestModel} from "../../model/post/post-request-model";
 import {ToastrService} from "ngx-toastr";
 import {Event, Router} from "@angular/router";
 

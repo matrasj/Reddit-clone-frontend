@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {AuthService} from "../../service/auth-service";
 import {Event, Router} from "@angular/router";
 import {UserService} from "../../service/user-service";
-import {UserModel} from "../../model/user-model";
-import {UserSearchModel} from "../../model/user-search-model";
+import {UserModel} from "../../model/user/user-model";
+import {UserSearchModel} from "../../model/user/user-search-model";
 
 @Component({
   selector: 'app-menu-bar',

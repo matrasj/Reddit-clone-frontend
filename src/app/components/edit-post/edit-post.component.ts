@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Inject, OnInit, Output} from '@angular/core';
 import {PostService} from "../../service/post-service";
 import {ActivatedRoute} from "@angular/router";
-import {PostModel} from "../../model/post-model";
+import {PostModel} from "../../model/post/post-model";
 import {AuthService} from "../../service/auth-service";
 import {MAT_DIALOG_DATA} from "@angular/material/dialog";
 
