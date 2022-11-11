@@ -1,97 +1,93 @@
-Project with Angular on frontend and Spring Boot backend. Topic of a project is reddit clone and learn these technologies.
-As a user you can:
-- Create account and login
-- Create, update, delete posts with images (only for logged in users)
-- Like posts, comment posts with images (also for only logged in users)
-- Browsing all posts with pagination for either non-authencitated user
-- Add into your profile data like: 
-  - short description
-  - links to your social media
-  - set profile immage 
-  - see your posts history
-  
-  
-Below i attach a couple of screenshots
+Main goal of Reddit-clone project was simple - create social media app similar to reddit. Beacuse of big DOM manipultion complexity, I used Angular framework to make development process faster, and learn this technology.
+In app as a user you can add posts with images, comment posts, like posts, manipulation you profile account, search for users and more.
+Whan it comes to sotring images in backend side I've read about 3 approaches:
+  1 - Store lobs in database
+  2 - Storing data in my local machine disk
+  3 - User some external cloud service
+In first phase of project development I followed second approach, however in order to learn new thins I changed this functionality to third approach using Amazon S3.
 
-Main page
-![image](https://user-images.githubusercontent.com/95829811/190677444-60fa7ff8-02a3-4583-95c3-fa9ef9ec94b8.png)
+Moreover project is fully responsive.
 
-Registrtion form
-![image](https://user-images.githubusercontent.com/95829811/190677663-31178ef5-f367-40c7-971b-9ce1c7bec6b0.png)
+In future I'm planning create chat functionality using websocket protocole.
+
+Below I attach screenshots gallery.
+
+# Main page ( authenticated users can comment, like and post )
+![image](https://user-images.githubusercontent.com/95829811/201358601-74a13933-01a3-487c-833d-2546b64da1b9.png)
+![image](https://user-images.githubusercontent.com/95829811/201358664-bbf0f70d-c24b-4525-92a3-4b89a70765bd.png)
+![image](https://user-images.githubusercontent.com/95829811/201358733-16ecda01-2a46-4cbf-8abe-247fd6c1c764.png)
+![image](https://user-images.githubusercontent.com/95829811/201358767-5400277d-d9bb-4013-bfd8-23afa2215b75.png)
+
+# Let's logout and try like post
+![image](https://user-images.githubusercontent.com/95829811/201359026-a9a2d404-6efd-4d29-8f16-3d4d9910be51.png)
+
+# We are redirected to login page
+![image](https://user-images.githubusercontent.com/95829811/201359084-cc424704-4db1-46e9-8639-ed4cc979fb06.png)
+![image](https://user-images.githubusercontent.com/95829811/201359113-79e6de00-179f-4ca1-857a-9aa8e6c1bb35.png)
+
+# Register form with reactive forms validation
+![image](https://user-images.githubusercontent.com/95829811/201359247-ebbd220d-f373-445f-b118-74b24f5ebde7.png)
+
+# Sub-reddit creation form
+![image](https://user-images.githubusercontent.com/95829811/201359424-b67b3ce7-d38e-4f0f-a613-f620d150c511.png)
+
+# Posts filtered by sub-reddit name
+![image](https://user-images.githubusercontent.com/95829811/201359583-187eb1e2-4622-42aa-9d85-4ac764bccc20.png)
+
+# View for all sub-reddits
+![image](https://user-images.githubusercontent.com/95829811/201359671-ad45c9ac-bf7f-4afe-94b8-fdc471c5928a.png)
+
+# Let's read the post
+![image](https://user-images.githubusercontent.com/95829811/201359782-72319863-d6d3-4d80-a161-12f0fb6c119d.png)
+![image](https://user-images.githubusercontent.com/95829811/201359853-10cccd22-d50a-46d1-a60e-e76578663ca6.png)
+![image](https://user-images.githubusercontent.com/95829811/201359899-a5adca0f-9b37-413f-8ead-68103a7c8cfc.png)
+
+# Post form creation
+![image](https://user-images.githubusercontent.com/95829811/201360104-8b0405bb-8df1-4d35-bcef-2f5c1d95eaa7.png)
+
+# Let's search for users
+![image](https://user-images.githubusercontent.com/95829811/201360187-bc6a42f3-ced0-4263-ac06-2f8e20417664.png)
+![image](https://user-images.githubusercontent.com/95829811/201360230-f6ff12c3-625f-401c-8707-239238023492.png)
+
+# My account's profile
+![image](https://user-images.githubusercontent.com/95829811/201360305-233de9fb-a336-44aa-a46d-a94f75a780e8.png)
+
+# I can manipulate with my posts
+![image](https://user-images.githubusercontent.com/95829811/201360398-9509bae3-c91c-47e7-bc34-423d27f0eaba.png)
+
+# My profile's info
+![image](https://user-images.githubusercontent.com/95829811/201360500-7feb09da-3981-4d1f-b50f-b8f79ff61ec1.png)
+
+# Creating social link
+![image](https://user-images.githubusercontent.com/95829811/201360662-c1358d5a-8613-4547-a410-c58b61a44d66.png)
+![image](https://user-images.githubusercontent.com/95829811/201360708-e4b65c71-a898-4ed4-a74b-856cd67d3bb4.png)
+
+# We can look for another profile but we can't chagne their profile info
+![image](https://user-images.githubusercontent.com/95829811/201360856-4ea3a0d7-d335-4898-b027-3309d2e8534d.png)
+
+# Give a like :D
+![image](https://user-images.githubusercontent.com/95829811/201360931-7f7e8d12-5acf-43ef-aec8-39820f781e1c.png)
+
+# Responsive screenshots
+![image](https://user-images.githubusercontent.com/95829811/201361143-fd554e4d-3e61-498f-9d67-0d71b3591c33.png)
+![image](https://user-images.githubusercontent.com/95829811/201361182-319e41b4-2370-4d28-959d-0425d6cb023e.png)
+![image](https://user-images.githubusercontent.com/95829811/201361265-80691236-b516-4e42-97de-e732b1534995.png)
+![image](https://user-images.githubusercontent.com/95829811/201361350-f3e5c645-283f-4481-b7a1-bdd56b2ba635.png)
+![image](https://user-images.githubusercontent.com/95829811/201361381-f671b102-f5f6-40ef-9859-5ffacddd773d.png)
+![image](https://user-images.githubusercontent.com/95829811/201361435-4d1b2e72-e113-4168-a8d5-00c21c10288a.png)
+![image](https://user-images.githubusercontent.com/95829811/201361502-e03e36d4-aad9-4ae4-889d-0e572e8216c4.png)
+![image](https://user-images.githubusercontent.com/95829811/201361560-80aa7507-2339-45db-b983-2ac737a71a36.png)
+![image](https://user-images.githubusercontent.com/95829811/201361653-7be8042e-ff30-4eab-bb7a-2accbfd4e325.png)
+![image](https://user-images.githubusercontent.com/95829811/201361699-9ff7869d-926d-44c1-a21a-f90a91462ba4.png)
+![image](https://user-images.githubusercontent.com/95829811/201361727-22ef5388-0e3c-4cac-8588-f9e9e9f859dc.png)
+![image](https://user-images.githubusercontent.com/95829811/201361773-25cfb485-cf45-4ff7-ac1f-c07ba9a10153.png)
 
 
-Login form
-![image](https://user-images.githubusercontent.com/95829811/190677541-5ef2ea63-8116-461a-bc8e-5eebe23a0232.png)
-
-After account creation and authentication
-![image](https://user-images.githubusercontent.com/95829811/190677737-0f894128-e6de-4264-8baf-48df1f615c6d.png)
-
-Liking post
-![image](https://user-images.githubusercontent.com/95829811/190677785-3cadd88e-2eef-4077-a26b-63c8d247dc6b.png)
-
-Post in main page view
-![image](https://user-images.githubusercontent.com/95829811/190677884-a6c15129-5f18-43c1-a76b-fc638e12a3ab.png)
-
-Comment form for authenticated user
-![image](https://user-images.githubusercontent.com/95829811/190678011-198bef28-823b-40ca-bcdc-ee7ff9c39814.png)
-
-
-Post form 
-![image](https://user-images.githubusercontent.com/95829811/190679356-31b668d5-e15f-4ac6-97fa-3d9ca62c79b7.png)
-
-New post
-![image](https://user-images.githubusercontent.com/95829811/190679481-87993014-f025-42d3-bd19-8361dd6ba35b.png)
-
-
-###################################################
-Commenting form another account uploading an image
-![image](https://user-images.githubusercontent.com/95829811/190680296-50fa0408-901c-4b5f-a183-5f3ed3e1039b.png)
-
-
-Comment view
-![image](https://user-images.githubusercontent.com/95829811/190680439-07f42fa2-6a06-413c-a9bb-bba2ac995828.png)
-
-Searching for users
-![image](https://user-images.githubusercontent.com/95829811/190680624-c3f68468-3d5b-4fc0-8e27-6f5a18056ad6.png)
-
-Some user profile
-![image](https://user-images.githubusercontent.com/95829811/190681758-d2dd6a01-6501-4c2e-a721-11695f98e8f3.png)
-
-My profile
-![image](https://user-images.githubusercontent.com/95829811/190681930-cbdb515e-b0d1-4793-8779-781870de178f.png)
-
-
-Edit social media link
-![image](https://user-images.githubusercontent.com/95829811/190682021-0dd06a1a-21d1-4967-8c35-a6748b1b1190.png)
-![image](https://user-images.githubusercontent.com/95829811/190682059-f84bbeee-dd26-49f6-b0d1-0b364be127ff.png)
-
-
-
-###################################################
-Some responsive screenshots
-![image](https://user-images.githubusercontent.com/95829811/190682211-4d6044bb-453f-4b53-9e11-9e5a509a8a7e.png)
-![image](https://user-images.githubusercontent.com/95829811/190682245-a69130b4-aa58-4496-998e-c98c4ca04b32.png)
-![image](https://user-images.githubusercontent.com/95829811/190682316-84236e62-7192-4734-b752-1cc03210f308.png)
-![image](https://user-images.githubusercontent.com/95829811/190682338-65c834a2-4152-43a8-b757-0716429b3a83.png)
-![image](https://user-images.githubusercontent.com/95829811/190682418-25914b91-9056-4bfd-b5cf-d13effb2f921.png)
-![image](https://user-images.githubusercontent.com/95829811/190682798-0ab7fc72-c6ad-4570-b936-c1ef1d4c5ace.png)
-![image](https://user-images.githubusercontent.com/95829811/190682904-eb771d02-b10a-495a-9474-1be8bfc0931d.png)
 
 
 
 
 
-###################################################
-(EDIT) During implemenation I came across with a problem of storing images. 
-I've read about 3 aproaches.
-  1. Keeping binary files in database
-  2. Storing files in my local drive and moving image files into project folder
-  3. Storing images in cloud or internal server.
- 
- Firstly I implemented this functionality with 2 aproach however after some thoughts, I decided to change it for option 3 (Amazon S3).
- I wanted to make project more real-world and by the way learn Amazon S3.
- 
- ![image](https://user-images.githubusercontent.com/95829811/191217370-dad6f5b6-c542-435f-9d3a-c1ad685a995c.png)
 
 
 
