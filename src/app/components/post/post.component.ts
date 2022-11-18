@@ -32,7 +32,6 @@ export class PostComponent implements OnInit {
               private dialogRef : MatDialog) { }
 
   ngOnInit(): void {
-
     this.authService.isAuthenticated
       .subscribe((isAuthenticated) => {
         if (isAuthenticated) {
@@ -61,7 +60,7 @@ export class PostComponent implements OnInit {
     if (this.isLogged) {
       [this.isPostLiked, this.isPostDisliked] = this.postService.getAttributesAfterLiked(this.isPostLiked, this.isPostDisliked);
 
-      this.votingService.votePost(VoteType.VOTE_UP.valueOf(), post.id)
+      this.votingService.votePost(VoteType.VOTE_UP.valueOf(), post.id, this.currentUsername)
         .subscribe((res) => post.voteCount = res.score);
     } else {
       this.router.navigate(["/login"]);
@@ -81,7 +80,7 @@ export class PostComponent implements OnInit {
    if (this.isLogged) {
      [this.isPostLiked, this.isPostDisliked] = this.postService.getAttributesAfterDisliked(this.isPostLiked, this.isPostDisliked);
 
-     this.votingService.votePost(VoteType.VOTE_DOWN.valueOf(), post.id)
+     this.votingService.votePost(VoteType.VOTE_DOWN.valueOf(), post.id, this.currentUsername)
        .subscribe((res) => post.voteCount = res.score);
    } else {
      this.router.navigate(["/login"]);

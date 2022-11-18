@@ -8,10 +8,11 @@ export class VotingService {
   constructor(private httpClient : HttpClient) {
   }
 
-  public votePost(voteValue : number, postId : number) : Observable<any> {
+  public votePost(voteValue : number, postId : number, username : string) : Observable<any> {
     return this.httpClient.post(`${this.API_VOTING_URL}`, {
       voteValue : voteValue,
-      postId : postId
+      postId : postId,
+      authorUsername : username
     })
   }
 }

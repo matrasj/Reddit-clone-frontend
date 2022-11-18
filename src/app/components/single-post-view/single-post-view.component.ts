@@ -101,7 +101,7 @@ export class SinglePostViewComponent implements OnInit {
     if (this.isLogged) {
       [this.isPostLiked, this.isPostDisliked] = this.postService.getAttributesAfterLiked(this.isPostLiked, this.isPostDisliked);
 
-      this.votingService.votePost(VoteType.VOTE_UP.valueOf(), post.id)
+      this.votingService.votePost(VoteType.VOTE_UP.valueOf(), post.id, post.authorUsername)
         .subscribe((res) => post.voteCount = res.score);
     } else {
       this.router.navigate(["/login"]);
@@ -113,7 +113,7 @@ export class SinglePostViewComponent implements OnInit {
     if (this.isLogged) {
       [this.isPostLiked, this.isPostDisliked] = this.postService.getAttributesAfterDisliked(this.isPostLiked, this.isPostDisliked);
 
-      this.votingService.votePost(VoteType.VOTE_DOWN.valueOf(), post.id)
+      this.votingService.votePost(VoteType.VOTE_DOWN.valueOf(), post.id, post.authorUsername)
         .subscribe((res) => post.voteCount = res.score);
     } else {
       this.router.navigate(["/login"]);
